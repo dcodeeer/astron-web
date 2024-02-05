@@ -16,15 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // scroll only index
-
-  document.addEventListener('scroll', (e) => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.style.background = '#0D0D0D';
-    } else {
-      header.style.background = 'transparent';
-    }
-  });
-
 });
