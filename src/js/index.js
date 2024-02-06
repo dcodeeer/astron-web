@@ -18,4 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: '.prev'
     },
   });
+
+  const swiper2 = new Swiper('.tabs', {
+    slidesPerView: "auto",
+    navigation: {
+      prevEl: '#tab-prev-btn',
+      nextEl: '#tab-next-btn'
+    },
+
+    breakpoints: {
+      1249: {
+        spaceBetween: 15,
+      },
+      1250: {
+        spaceBetween: 64,
+      },
+    }
+  });
 });

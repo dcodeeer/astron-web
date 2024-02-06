@@ -148,8 +148,7 @@ body {
     .wrapper .container aside {
       border-radius: 40px;
       background-color: #0D0D0D;
-      margin-right: calc((( 1465px - 100vw ) / 2) + 12px);
-      padding-right: calc((( 100vw - 1465px ) / 2) - 12px); }
+      margin-right: calc((( 1465px - 100vw ) / 2) + 12px); }
   @media screen and (max-width: 1500px) {
     .wrapper .container content {
       padding-left: 12px;
