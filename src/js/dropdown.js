@@ -6,9 +6,9 @@ const dropdownListener = (e) => {
   const dropdownCloseListener = (e) => {
     const isClickInsideElement = dropdown.contains(e.target);
     if (!isClickInsideElement) {
-      options.classList.toggle('show');
+      e.currentTarget.classList.toggle('show');
       document.removeEventListener('click',dropdownCloseListener)
-      return;
+      return false;
     }
   }
 
@@ -18,7 +18,7 @@ const dropdownListener = (e) => {
     e.currentTarget.querySelector('.select input').value = e.target.innerText;
     e.currentTarget.querySelector('.hidden').setAttribute('data-name', e.target.getAttribute('data-name'));
     e.currentTarget.querySelector('.hidden').value = e.target.getAttribute('data-value');
-    options.classList.remove('show');
+    e.currentTarget.classList.remove('show');
 
     // profession only
       const changeEvent = new Event('change');
@@ -27,9 +27,11 @@ const dropdownListener = (e) => {
 
     options.querySelectorAll('.headline').forEach(elem => elem.querySelector('.list').classList.remove('opened'));
   } else {
-    options.classList.toggle('show');
+    e.currentTarget.classList.toggle('show');
     options.querySelectorAll('.headline').forEach(elem => elem.querySelector('.list').classList.remove('opened'));
   }
+
+  return false;
 };
 
 const titles = document.querySelectorAll('.headline .title');

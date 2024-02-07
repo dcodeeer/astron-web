@@ -483,19 +483,27 @@ footer {
 
 .dropdown {
   max-width: 290px;
-  border-radius: 58px;
+  border-radius: 25px;
   border: 1px solid rgba(234, 140, 0, 0.1);
-  padding: 16px 32px;
   font-size: 16px;
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
 
 .dropdown .select {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   width: 100%;
-  height: 20px; }
+  padding: 16px 32px; }
+
+.dropdown.show {
+  overflow: visible;
+  border-radius: 25px 25px 0 0;
+  border: 1px solid var(--color-orange); }
+
+.dropdown.show .select {
+  background: rgba(234, 140, 0, 0.1); }
 
 .dropdown .select input {
   color: var(--color-orange);
@@ -514,18 +522,19 @@ footer {
   height: auto; }
 
 .dropdown .options {
-  width: 100%;
+  width: calc(100% + 2px);
+  margin-left: -1px;
   max-height: 0;
   overflow: auto;
   background: var(--color-black);
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 1.22393px 11.42331px 0px rgba(0, 0, 0, 0.05), 0px 5.30368px 21.21471px 0px rgba(0, 0, 0, 0.04), 0px 11.83128px 29.37422px 0px rgba(0, 0, 0, 0.03), 0px 21.21471px 34.26992px 0px rgba(0, 0, 0, 0.01), 0px 33.65796px 37.53373px 0px rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 1.22393px 11.42331px 0px rgba(0, 0, 0, 0.05), 0px 5.30368px 21.21471px 0px rgba(0, 0, 0, 0.04), 0px 11.83128px 29.37422px 0px rgba(0, 0, 0, 0.03), 0px 21.21471px 34.26992px 0px rgba(0, 0, 0, 0.01), 0px 33.65796px 37.53373px 0px rgba(0, 0, 0, 0);
-  margin-top: 25px;
-  margin-left: -30px;
   position: absolute;
   z-index: 1; }
 
-.dropdown .show {
+.dropdown.show .options {
+  border: 1px solid var(--color-orange);
+  border-top: none;
+  border-radius: 0 0 25px 25px;
   max-height: 400px; }
 
 .dropdown .options .option {
@@ -535,7 +544,7 @@ footer {
   font-weight: 400;
   line-height: 130%;
   cursor: pointer;
-  padding: 10px 20px; }
+  padding: 10px 30px; }
 
 .dropdown .options .option:hover {
   color: var(--color-blue); }
