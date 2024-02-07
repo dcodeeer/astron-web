@@ -482,7 +482,7 @@ footer {
         display: none; } }
 
 .dropdown {
-  max-width: 290px;
+  width: 290px;
   border-radius: 25px;
   border: 1px solid rgba(234, 140, 0, 0.1);
   font-size: 16px;
@@ -500,7 +500,7 @@ footer {
 .dropdown.show {
   overflow: visible;
   border-radius: 25px 25px 0 0;
-  border: 1px solid var(--color-orange); }
+  border: 1px solid var(--color-orange) !important; }
 
 .dropdown.show .select {
   background: rgba(234, 140, 0, 0.1); }
@@ -519,10 +519,14 @@ footer {
 
 .dropdown .select svg {
   width: 17px;
-  height: auto; }
+  height: auto;
+  transition: 0.175s; }
+
+.dropdown.show .select svg {
+  transform: rotate(180deg); }
 
 .dropdown .options {
-  width: calc(100% + 2px);
+  width: 290px;
   margin-left: -1px;
   max-height: 0;
   overflow: auto;

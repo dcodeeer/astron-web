@@ -52,10 +52,12 @@
     max-width: 290px; }
     .wrapper .container aside form .H1 {
       margin-bottom: 32px; }
-    .wrapper .container aside form .dropdown .select input {
-      font-weight: 400; }
-      .wrapper .container aside form .dropdown .select input::placeholder {
-        color: #563B12; }
+    .wrapper .container aside form .dropdown {
+      border: 1px solid #563B12; }
+      .wrapper .container aside form .dropdown .select input {
+        font-weight: 400; }
+        .wrapper .container aside form .dropdown .select input::placeholder {
+          color: #563B12; }
     .wrapper .container aside form .input {
       width: 100%;
       border-radius: 58px;
