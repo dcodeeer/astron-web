@@ -13,7 +13,7 @@
 
   <link href='/dist/css/styles.css' rel='stylesheet' />
 
-  <link href='/dist/css/pages/news.css' rel='stylesheet' />
+  <link href='/dist/css/pages/vacancies.css' rel='stylesheet' />
 </head>
 <body>
   <header>
@@ -77,67 +77,97 @@
   <div class='wrapper'>
     <div class='container'>
       <content>
-        <div class='page-title H0'>Новости</div>
-        
-        <div class='articles'>
-          <a class='article' href='#'>
-            <img src='./assets/images/articles.png'/>
-            <div class='content'>
-              <div class='date body-2'>Сентябрь 21, 2023</div>
-              <div class='H1'>Зміна складу посадових осіб ПрАТ "ВЕСТАСТРОЙ"</div>
+        <div class='H0'>Вакансии</div>
+        <div class='filters'>
+          <div class='dropdown'>
+            <input class='hidden' type='hidden' name='location' value='' />
+            <div class='select'>
+              <input id='first-location-input' type='text' readonly placeholder='все вакансии' />
+              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M1 1L8 8L15 1" stroke="#EA8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-          </a>
-          <a class='article' href='#'>
-            <img src='./assets/images/articles.png'/>
-            <div class='content'>
-              <div class='date body-2'>Сентябрь 21, 2023</div>
-              <div class='H1'>Зміна складу посадових осіб ПрАТ "ВЕСТАСТРОЙ"</div>
+            <div class='options'>
+              <div class='option' data-value='0'>все вакансии</div>
+              <div class='option' data-value='1'>Бухгалер</div>
+              <div class='option' data-value='2'>водитель</div>
+              <div class='option' data-value='3'>Юрист</div>
             </div>
-          </a>
-          <a class='article' href='#'>
-            <img src='./assets/images/articles.png'/>
-            <div class='content'>
-              <div class='date body-2'>Сентябрь 21, 2023</div>
-              <div class='H1'>Зміна складу посадових осіб ПрАТ "ВЕСТАСТРОЙ"</div>
+          </div>
+          <div class='dropdown'>
+            <input class='hidden' type='hidden' name='location' value='' />
+            <div class='select'>
+              <input id='first-location-input' type='text' readonly placeholder='все области' />
+              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M1 1L8 8L15 1" stroke="#EA8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-          </a>
+            <div class='options'>
+              <div class='option' data-value='0'>все области</div>
+              <div class='option' data-value='1'>Винницкая</div>
+              <div class='option' data-value='2'>Волынская</div>
+              <div class='option' data-value='3'>Днепропетровская</div>
+              <div class='option' data-value='4'>Донецкая</div>
+            </div>
+          </div>
+        </div>
+        <div class='vacancies'>
+          <div class='item'>
+            <div class='H1'>Водитель категории А</div>
+            <div class='info body-3'>
+              <div class='info-item'>Киев</div>
+              <div class='dot'></div>
+              <div class='info-item'>Полная занятость</div>
+              <div class='dot'></div>
+              <div class='info-item'>Сентябрь 21, 2023</div>
+            </div>
+            <div class='body-2'>Снос зданий - это процесс, который может быть необходимым по различным причинам, таким как реконструкция, устаревание или повреждение зданий. Однако, и эффективное использования определенных техник и методов.</div>
+          </div>
+          <div class='item'>
+            <div class='H1'>Водитель категории А</div>
+            <div class='info body-3'>
+              <div class='info-item'>Киев</div>
+              <div class='dot'></div>
+              <div class='info-item'>Полная занятость</div>
+              <div class='dot'></div>
+              <div class='info-item'>Сентябрь 21, 2023</div>
+            </div>
+            <div class='body-2'>Снос зданий - это процесс, который может быть необходимым по различным причинам, таким как реконструкция, устаревание или повреждение зданий. Однако, и эффективное использования определенных техник и методов.</div>
+          </div>
+          <div class='item'>
+            <div class='H1'>Водитель категории А</div>
+            <div class='info body-3'>
+              <div class='info-item'>Киев</div>
+              <div class='dot'></div>
+              <div class='info-item'>Полная занятость</div>
+              <div class='dot'></div>
+              <div class='info-item'>Сентябрь 21, 2023</div>
+            </div>
+            <div class='body-2'>Снос зданий - это процесс, который может быть необходимым по различным причинам, таким как реконструкция, устаревание или повреждение зданий. Однако, и эффективное использования определенных техник и методов.</div>
+          </div>
         </div>
       </content>
       <aside>
-        <div class='box'>
-          <div class='pagination'>
-            <div class='info'>
-              <div class='body-2'>Страница:</div>
-              <div class='H1'>1 <span class='orange'>/ 14</span></div>
+        <form class='box'>
+          <div class='H1'>Подать заявку на вакансию</div>
+          <div class='dropdown'>
+            <input class='hidden' type='hidden' name='location' value='' />
+            <div class='select'>
+              <input id='first-location-input' type='text' readonly placeholder='введите позицию' />
+              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M1 1L8 8L15 1" stroke="#EA8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div class='btns'>
-              <div class='prev button-2'>
-                <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.4" d="M24.25 9H2.75M2.75 9L10.25 1.5M2.75 9L10.25 16.5" stroke="#EA8C00" stroke-width="3"/>
-                  </svg>
-                  
-              </div>
-              <div class='next button-1'>
-                <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.75 9H22.25M22.25 9L14.75 1.5M22.25 9L14.75 16.5" stroke="white" stroke-width="3"/>
-                  </svg>              
-              </div>
+            <div class='options'>
+              <div class='option' data-value='1'>первая позиция</div>
+              <div class='option' data-value='2'>вторая позиция</div>
+              <div class='option' data-value='3'>третья позиция</div>
+              <div class='option' data-value='4'>четвертая позиция</div>
             </div>
           </div>
-          <div class='border'></div>
-          
-          <div class='form-box'>
-            <form>
-              <div class='H1'>Интересуют наши услуги? Оставьте заявку</div>
-              <input type='text' placeholder='Номер телефона' />
-              <input type='text' placeholder='Имя' />
-              <button class='button-3'>Отправить</button>
-            </form>
-          </div>
-        </div>
+          <input class='input' type='text' placeholder='Имя' />
+          <input class='input' type='text' placeholder='Город' />
+          <input class='input' type='text' placeholder='Номер телефона' />
+          <button class='button-3 body-3'>Отправить</button>
+        </form>
       </aside>
     </div>
   </div>
+
 
   <div class='contact-us-box'>
     <img class='left-bottom-img' src='./assets/images/left_bottom.png' />
@@ -260,7 +290,8 @@
     </div>
 
   </footer>
-
+  
+  <script type='text/javascript' src='./dist/js/dropdown.js'></script>
   <script type='text/javascript' src='./dist/js/main.js'></script>
 </body>
 </html>

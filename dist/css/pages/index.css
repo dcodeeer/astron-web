@@ -282,7 +282,7 @@ header {
     .index-page .fourth .container .left {
       background-color: var(--color-black);
       border-radius: 40px 40px 0px 0px;
-      margin-left: calc(((1465px - 100vw) / 2) + 10px);
+      margin-left: calc(((1465px - 100vw) / 2) + 12px);
       padding-left: calc(((100vw - 1465px) / 2) - 10px);
       margin-right: -80px;
       display: flex;
@@ -403,15 +403,15 @@ header {
     width: auto;
     border: 2px solid var(--color-orange);
     border-right: none;
-    margin-right: calc((( 1465px - 100vw ) / 2) + 5px);
-    padding-right: calc((( 100vw - 1465px ) / 2) - 10px); }
+    margin-right: calc((( 1465px - 100vw ) / 2) + 8px);
+    padding-right: calc((( 100vw - 1465px ) / 2) - 12px); }
     .index-page .fifth .right .title {
-      margin-right: calc((( 1465px - 100vw ) / 2) + 10px);
-      padding-right: calc((( 100vw - 1465px ) / 2) - 10px);
+      margin-right: calc((( 1465px - 100vw ) / 2) + 12px);
+      padding-right: calc((( 100vw - 1465px ) / 2) - 12px);
       padding-left: 8%; }
     .index-page .fifth .right .list .item {
-      margin-right: calc((( 1465px - 100vw ) / 2) + 10px);
-      padding-right: calc((( 100vw - 1465px ) / 2) - 10px);
+      margin-right: calc((( 1465px - 100vw ) / 2) + 12px);
+      padding-right: calc((( 100vw - 1465px ) / 2) - 12px);
       padding-left: 8%; }
   @media screen and (max-width: 1500px) {
     .index-page .fifth .left {
