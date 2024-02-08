@@ -37,8 +37,7 @@
             inset: 0;
             border-radius: 50px; 
             padding: 1px; 
-            background:linear-gradient(25deg,#402C0E, #2E200B00); 
-            -webkit-mask:  linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            background:linear-gradient(25deg,#402C0E, #2E200B00);
             mask-composite: exclude;
             pointer-events: none;
           }
