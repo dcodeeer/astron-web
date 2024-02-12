@@ -562,7 +562,11 @@ header {
       border-radius: 100%;
       position: absolute;
       top: 18px;
-      right: 18px; }
+      right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99; }
     .modal-box .modal .slider-wrapper {
       position: relative; }
       .modal-box .modal .slider-wrapper .btns {
@@ -669,11 +673,14 @@ header {
           flex-direction: column;
           gap: 15px; }
           .modal-box .modal .content .middle .tabs {
+            width: 100%;
             border: none;
             flex-direction: column;
             gap: 15px; }
             .modal-box .modal .content .middle .tabs button {
-              border: 1px solid rgba(234, 140, 0, 0.1); } }
+              border: 1px solid rgba(234, 140, 0, 0.1);
+              font-size: 14px;
+              padding: 14px 0; } }
 
 .modal-box-opened {
   display: flex; }

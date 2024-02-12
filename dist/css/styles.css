@@ -38,7 +38,8 @@ body {
   padding: 0 5px;
   height: auto;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-x: hidden; }
 
 .wrapper {
   flex: 1; }

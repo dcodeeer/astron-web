@@ -842,6 +842,10 @@ header {
       position: absolute;
       top: 18px;
       right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
     }
 
     .slider-wrapper {
@@ -1001,12 +1005,15 @@ header {
           gap: 15px;
 
           .tabs {
+            width: 100%;
             border: none;
             flex-direction: column;
             gap: 15px;
 
             button {
               border: 1px solid rgba(234, 140, 0, 0.10);
+              font-size: 14px;
+              padding: 14px 0;
             }
           }
         }

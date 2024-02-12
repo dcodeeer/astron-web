@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.querySelector('.modal-box');
     modal.classList.add('modal-box-opened');
-    body.style.overflow = 'hidden';
+    body.style.overflowY = 'hidden';
 
     document.getElementById('close-modal').addEventListener('click', () => {
       modal.classList.remove('modal-box-opened')
-      body.style.overflow = 'visible';
+      body.style.overflowY = 'visible';
     });
   };
 
