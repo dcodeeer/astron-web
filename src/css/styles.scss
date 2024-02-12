@@ -25,6 +25,9 @@ input, button {
   line-height: 120%;
   color: var(--dark-text);
 }
+button {
+  cursor: pointer;
+}
 
 
 html, body {
