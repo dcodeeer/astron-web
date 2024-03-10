@@ -39,7 +39,7 @@
 
 .wrapper .container aside {
   padding-top: 100px;
-  padding-right: calc((( 100vw - 1465px ) / 2) - 12px);
+  padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
   display: flex;
   flex-direction: column;
   align-items: flex-end; }
