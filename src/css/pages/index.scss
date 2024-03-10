@@ -106,29 +106,37 @@ header {
 
       .list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(270px, min-content));
         gap: 30px;
         justify-content: space-between;
 
         .block {
+          height: 232px;
           position: relative;
-          padding: 25px 25px 25px 0;
 
-          .border {
-            width: 50%;
-            max-height: 230px;
+          &:first-child {
+            .content {
+              .number {
+                color: var(--color-orange);
+              }
+            }
+          }
+
+          &::after {
+            background: url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 143 232" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="-0.5" y="0.5" width="142" height="231" rx="39.5" transform="matrix(-1 0 0 1 142 0)" stroke="url(%23paint0_linear_498_28632)"/><defs><linearGradient id="paint0_linear_498_28632" x1="11.6735" y1="16.5714" x2="144.088" y2="44.6294" gradientUnits="userSpaceOnUse"><stop stop-color="%23563B12"/><stop offset="1" stop-color="%232E200B" stop-opacity="0"/></linearGradient></defs></svg>');
+            background-repeat: no-repeat;
+            background-position: right;
+            content: '';
+            display: block;
             top: 0;
             bottom: 0;
             right: 0;
-            border: 1px solid #563B12;
-            border-radius: 40px;
+            left: 0;
             position: absolute;
           }
           .content {
             width: max-content;
-            padding-bottom: 50px;
-            background-color: var(--color-black);
-            box-shadow: 20px -15px 40px 0px var(--color-black);
+            padding: 25px 0 25px 0;
             position: relative;
             z-index: 1;
 
@@ -138,6 +146,8 @@ header {
               font-style: normal;
               font-weight: 700;
               line-height: 100%;
+              margin-right: 80px;
+              margin-bottom: 16px;
             }
             .text {
               max-width: 250px;
@@ -148,18 +158,34 @@ header {
       }
     }
 
+    @media screen and (max-width: 1550px) {
+      .container {
+        .list {
+          .block {
+            .content {
+              .number {
+                font-size: 110px;
+              }
+              .text {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
     @media screen and (max-width: 1250px) {
       padding: 100px 0;
+
       .container {
+        padding: 0 15px;
+
         .top {
-          width: 80%;
-          margin: 0 auto;
           flex-direction: column;
-          margin-bottom: 50px;
-        }
-        .list {
-          grid-template-columns: repeat(2, 300px);
-          justify-content: space-around;
+          .body-1 {
+            margin-bottom: 15px;
+          }
         }
       }
     }
@@ -175,18 +201,19 @@ header {
           }
         }
         .list {
-          grid-template-columns: repeat(2, 150px);
+          grid-template-columns: repeat(auto-fill, minmax(150px, min-content));
+          justify-content: space-around;
+
           .block {
-            .border {
-              width: 70%;
-              max-height: 150px;
-            }
+            height: 150px;
+            
             .content {
               .number {
                 font-size: 48px;
+                margin-right: 40px;
               }
               .text {
-                max-width: 100px;
+                max-width: 130px;
                 font-size: 14px;
               }
             }
@@ -365,7 +392,7 @@ header {
 
     }
 
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1550px) {
       padding: 50px 10px;
       .container {
         .mini-title {
