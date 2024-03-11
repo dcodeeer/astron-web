@@ -448,7 +448,7 @@ header {
         border-radius: 40px 40px 0px 0px;
 
         margin-left: calc(var(--margin-calc) + 5px);
-        padding-left: 15px;
+        padding-left: calc(var(--padding-calc) - 5px);
         margin-right: -80px;
         display: flex;
         align-items: center;
@@ -468,10 +468,10 @@ header {
         border: 1px solid rgba(234, 140, 0, 0.70);
         padding: 120px 0;
         margin-right: calc(var(--margin-calc) + 5px);
-        padding-right: 15px;
+        padding-right: calc(var(--padding-calc));
 
         .box {
-          max-width: 290px;
+          max-width: 80%;
           margin-left: auto;
 
           .title {
@@ -505,16 +505,12 @@ header {
       }
     }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1550px) {
       .container {
         .left {
-          margin-left: calc(var(--margin-calc));
           .title {
             font-size: 100px;
           }
-        }
-        .right {
-          margin-right: calc(var(--margin-calc));
         }
       }
     }
@@ -541,7 +537,6 @@ header {
           padding-right: 0;
 
           .box {
-            max-width: 500px;
             padding: 0 15px;
             margin: auto;
 
