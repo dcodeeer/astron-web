@@ -44,7 +44,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+          padding-right: calc(var(--padding-calc));
 
           .orange {
             color: var(--color-orange);
@@ -67,7 +67,7 @@
         }
 
         .form-box {
-          padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+          padding-right: calc(var(--padding-calc));
           form {
             width: 290px;
             display: flex;

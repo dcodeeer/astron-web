@@ -18,14 +18,15 @@
     position: relative;
     padding: 40px 64px; }
     .wrapper .container content .vacancies .item::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50px;
-      padding: 1px;
-      background: linear-gradient(25deg, #402C0E, #2E200B00);
-      mask-composite: exclude;
-      pointer-events: none; }
+      background: url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 877 253" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="876" height="252" rx="39.5" stroke="url(%23paint0_linear_519_20589)"/><defs><linearGradient id="paint0_linear_519_20589" x1="71.5918" y1="18.0714" x2="422.222" y2="435.903" gradientUnits="userSpaceOnUse"><stop stop-color="%23402C0E"/><stop offset="1" stop-color="%232E200B" stop-opacity="0"/></linearGradient></defs></svg>');
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      position: absolute; }
     .wrapper .container content .vacancies .item .info {
       display: flex;
       align-items: center;

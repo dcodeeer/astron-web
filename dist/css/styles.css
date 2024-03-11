@@ -3,13 +3,24 @@
   --color-white: #D8CDBB;
   --color-black: #0D0D0D;
   --dark-text: #8C877B;
-  --container-width: 1465px; }
+  --container-width: 1465px;
+  --margin-calc: calc(((var(--container-width) - 100vw) + 8px) / 2);
+  --padding-calc: calc(((100vw - var(--container-width)) + 8px) / 2); }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
+
+*::-webkit-scrollbar {
+  background: linear-gradient(180deg, #AE6900 0%, #231A0C 100%);
+  width: 8px;
+  overflow: hidden; }
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-black);
+  border-radius: 8px; }
 
 a {
   text-decoration: none;
@@ -39,8 +50,7 @@ body {
   padding: 0 5px;
   height: auto;
   display: flex;
-  flex-direction: column;
-  overflow-x: hidden; }
+  flex-direction: column; }
 
 .wrapper {
   flex: 1; }
@@ -156,16 +166,16 @@ body {
     .wrapper .container content {
       border-radius: 40px;
       background-color: #0D0D0D;
-      margin-left: calc((( var(--container-width) - 100vw ) / 2) + 12px);
-      padding-left: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+      margin-left: calc(var(--margin-calc) + 5px);
+      padding-left: calc(var(--padding-calc) - 5px);
       padding-top: 80px;
       padding-bottom: 200px;
       padding-right: 80px; }
     .wrapper .container aside {
       border-radius: 40px;
       background-color: #0D0D0D;
-      margin-right: calc((( var(--container-width) - 100vw ) / 2) + 12px); }
-  @media screen and (max-width: 1500px) {
+      margin-right: calc(var(--margin-calc) + 5px); }
+  @media screen and (max-width: 1250px) {
     .wrapper .container content {
       padding-left: 12px;
       margin-left: 0; }
@@ -463,13 +473,6 @@ footer {
         font-weight: 700; }
       footer .bottom .container .copyright {
         color: var(--dark-text); }
-  @media screen and (max-width: 1500px) {
-    footer .top .first {
-      padding-left: 15px;
-      margin-left: 0; }
-    footer .top .third {
-      padding-right: 15px;
-      margin-right: 0; } }
   @media screen and (max-width: 1250px) {
     footer .top {
       display: flex;
@@ -480,13 +483,17 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-left: 15px;
+        margin-left: 0;
         margin-right: 0; }
       footer .top .second {
         margin-right: 0;
         border-radius: 40px; }
       footer .top .third {
         align-items: center;
-        border-radius: 40px; }
+        border-radius: 40px;
+        padding-right: 15px;
+        margin-right: 0; }
     footer .bottom .container {
       flex-direction: column;
       gap: 20px; }

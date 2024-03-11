@@ -89,7 +89,16 @@
   .wrapper .container {
     grid-template-columns: 1fr; }
     .wrapper .container content {
+      padding-top: 40px;
       padding-right: 10px; }
+      .wrapper .container content .H0 {
+        font-size: 32px; }
+      .wrapper .container content .articles .article {
+        padding: 32px 0; }
+        .wrapper .container content .articles .article .content .body-2 {
+          font-size: 15px; }
+        .wrapper .container content .articles .article .content .H1 {
+          font-size: 20px; }
     .wrapper .container aside {
       padding: 50px 0; }
       .wrapper .container aside .border {

@@ -26,7 +26,7 @@
 
 .wrapper .container aside {
   padding-top: 100px;
-  padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+  padding-right: calc((( 100vw - 1465px ) / 2) - 12px);
   display: flex;
   flex-direction: column;
   align-items: flex-end; }
@@ -52,15 +52,22 @@
     .wrapper .container content {
       padding: 40px 20px; }
       .wrapper .container content .H0 {
-        font-size: 32px;
+        font-size: 24px;
         margin-bottom: 24px; }
       .wrapper .container content .info {
         margin-bottom: 24px; }
       .wrapper .container content .content {
-        gap: 24px; }
+        gap: 24px;
+        font-size: 16px; }
         .wrapper .container content .content img {
           width: 100%; }
     .wrapper .container aside {
       margin-right: 0;
       padding: 50px 0;
-      align-items: center; } }
+      align-items: center; }
+      .wrapper .container aside .box .H1 {
+        font-size: 24px; }
+      .wrapper .container aside .box .row .body-3 {
+        font-size: 14px; }
+      .wrapper .container aside .box .row .body-1 {
+        font-size: 16px; } }

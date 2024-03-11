@@ -5,12 +5,23 @@
   --dark-text: #8C877B;
 
   --container-width: 1465px;
+  --margin-calc: calc(((var(--container-width) - 100vw) + 8px) / 2);
+  --padding-calc: calc(((100vw - var(--container-width)) + 8px) / 2);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+}
+*::-webkit-scrollbar {
+  background: linear-gradient(180deg, #AE6900 0%, #231A0C 100%);
+  width: 8px;
+  overflow: hidden;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-black);
+  border-radius: 8px;
 }
 a {
   text-decoration: none;
@@ -44,7 +55,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 .wrapper {
   flex: 1;
@@ -177,8 +187,8 @@ body {
     content {
       border-radius: 40px;
       background-color: #0D0D0D;
-      margin-left: calc((( var(--container-width) - 100vw ) / 2) + 12px);
-      padding-left: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+      margin-left: calc(var(--margin-calc) + 5px);
+      padding-left: calc(var(--padding-calc) - 5px);
       padding-top: 80px;
       padding-bottom: 200px;
       padding-right: 80px;
@@ -187,10 +197,11 @@ body {
     aside {
       border-radius: 40px;
       background-color: #0D0D0D;
-      margin-right: calc((( var(--container-width) - 100vw ) / 2) + 12px);
+      margin-right: calc(var(--margin-calc) + 5px);
     }
   }
-  @media screen and (max-width: 1500px) {
+
+  @media screen and (max-width: 1250px) {
     .container {
       content {
         padding-left: 12px;
@@ -623,19 +634,6 @@ footer {
     }
   }
 
-  @media screen and (max-width: 1500px) {
-    .top {
-      .first {
-        padding-left: 15px;
-        margin-left: 0;
-      }
-      .third {
-        padding-right: 15px;
-        margin-right: 0;
-      }
-    }
-  }
-
   @media screen and (max-width: 1250px) {
     .top {
       display: flex;
@@ -649,6 +647,8 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-left: 15px;
+        margin-left: 0;
         margin-right: 0;
       }
       .second {
@@ -658,6 +658,8 @@ footer {
       .third {
         align-items: center;
         border-radius: 40px;
+        padding-right: 15px;
+        margin-right: 0;
       }
     }
 

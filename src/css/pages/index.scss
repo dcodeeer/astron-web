@@ -160,6 +160,11 @@ header {
 
     @media screen and (max-width: 1550px) {
       .container {
+        .top {
+          .H0 {
+            font-size: 35px;
+          }
+        }
         .list {
           .block {
             .content {
@@ -442,8 +447,8 @@ header {
         background-color: var(--color-black);
         border-radius: 40px 40px 0px 0px;
 
-        margin-left: calc(((var(--container-width) - 100vw) / 2) + 12px);
-        padding-left: calc(((100vw - var(--container-width)) / 2) - 10px);
+        margin-left: calc(var(--margin-calc) + 5px);
+        padding-left: calc(var(--padding-calc) - 5px);
         margin-right: -80px;
         display: flex;
         align-items: center;
@@ -462,8 +467,8 @@ header {
         border-radius: 40px 40px 0px 40px;
         border: 1px solid rgba(234, 140, 0, 0.70);
         padding: 120px 0;
-        margin-right: calc((( var(--container-width) - 100vw ) / 2) + 11px);
-        padding-right: calc((( 100vw - var(--container-width) ) / 2) - 10px);
+        margin-right: calc(var(--margin-calc) + 5px);
+        padding-right: calc(var(--padding-calc) - 5px);
 
         .box {
           max-width: 290px;
@@ -494,6 +499,16 @@ header {
 
           .button-3 {
             margin-top: 12px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1550px) {
+      .container {
+        .left {
+          .title {
+            font-size: 100px;
           }
         }
       }
@@ -594,18 +609,18 @@ header {
       width: auto;
       border: 2px solid var(--color-orange);
 
-      margin-left: calc(((var(--container-width) - 100vw) / 2) + 5px);
-      padding-left: calc(((100vw - var(--container-width)) / 2) - 10px);
+      margin-left: calc(var(--margin-calc) - 2px);
+      padding-left: calc(var(--padding-calc) - 14px);
 
       .title {
-        margin-left: calc(((var(--container-width) - 100vw) / 2) + 10px);
-        padding-left: calc(((100vw - var(--container-width)) / 2) - 10px);
+        margin-left: calc(var(--margin-calc) - 5px);
+        padding-left: calc(var(--padding-calc) - 5px);
       }
 
       .list {
         .item {
-          margin-left: calc(((var(--container-width) - 100vw) / 2) + 10px);
-          padding-left: calc(((100vw - var(--container-width)) / 2) - 10px);
+          margin-left: calc(var(--margin-calc) - 5px);
+          padding-left: calc(var(--padding-calc) - 5px);
           padding-right: 8%;
         }
       }
@@ -616,12 +631,12 @@ header {
       border: 2px solid var(--color-orange);
       border-right: none;
 
-      margin-right: calc((( var(--container-width) - 100vw ) / 2) + 8px);
-      padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+      margin-right: calc(var(--margin-calc));
+      padding-right: calc(var(--padding-calc) - 16px);
 
       .title {
-        margin-right: calc((( var(--container-width) - 100vw ) / 2) + 12px);
-        padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+        margin-right: calc(var(--margin-calc) + 8px);
+        padding-right: calc(var(--margin-calc) + 8px);
         padding-left: 8%;
       }
 
@@ -793,6 +808,16 @@ header {
               font-weight: 700;
               text-transform: uppercase;
             }
+          }
+        }
+      }
+    }
+    
+    @media screen and (max-width: 1550px) {
+      .right {
+        .top {
+          .title {
+            font-size: 35px;
           }
         }
       }
