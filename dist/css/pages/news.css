@@ -33,7 +33,7 @@
 .wrapper .container aside {
   display: flex;
   flex-direction: column;
-  padding: 180px 0 100px 0;
+  padding: 180px 15px 100px 15px;
   position: relative; }
   .wrapper .container aside .border {
     width: 100%;

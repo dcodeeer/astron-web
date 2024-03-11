@@ -293,8 +293,8 @@ header {
     .index-page .fourth .container .left {
       background-color: var(--color-black);
       border-radius: 40px 40px 0px 0px;
-      margin-left: calc(var(--margin-calc));
-      padding-left: calc(var(--padding-calc));
+      margin-left: calc(var(--margin-calc) + 5px);
+      padding-left: 15px;
       margin-right: -80px;
       display: flex;
       align-items: center; }
@@ -309,8 +309,8 @@ header {
       border-radius: 40px 40px 0px 40px;
       border: 1px solid rgba(234, 140, 0, 0.7);
       padding: 120px 0;
-      margin-right: calc(var(--margin-calc));
-      padding-right: calc(var(--padding-calc) + 5px); }
+      margin-right: calc(var(--margin-calc) + 5px);
+      padding-right: 15px; }
       .index-page .fourth .container .right .box {
         max-width: 290px;
         margin-left: auto; }
@@ -332,9 +332,13 @@ header {
               opacity: 0.6; }
         .index-page .fourth .container .right .box .button-3 {
           margin-top: 12px; }
-  @media screen and (max-width: 1550px) {
-    .index-page .fourth .container .left .title {
-      font-size: 100px; } }
+  @media screen and (max-width: 1500px) {
+    .index-page .fourth .container .left {
+      margin-left: calc(var(--margin-calc)); }
+      .index-page .fourth .container .left .title {
+        font-size: 100px; }
+    .index-page .fourth .container .right {
+      margin-right: calc(var(--margin-calc)); } }
   @media screen and (max-width: 1250px) {
     .index-page .fourth .container {
       grid-template-columns: 1fr; }
