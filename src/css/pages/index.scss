@@ -86,7 +86,7 @@ header {
   .second {
     background-color: var(--color-black);
     border-radius: 48px;
-    padding: 180px 0;
+    padding: 180px 15px;
     margin-bottom: 5px;
 
     .container {
@@ -447,8 +447,8 @@ header {
         background-color: var(--color-black);
         border-radius: 40px 40px 0px 0px;
 
-        margin-left: calc(var(--margin-calc) + 5px);
-        padding-left: calc(var(--padding-calc) - 5px);
+        margin-left: calc(var(--margin-calc));
+        padding-left: calc(var(--padding-calc));
         margin-right: -80px;
         display: flex;
         align-items: center;
@@ -467,8 +467,8 @@ header {
         border-radius: 40px 40px 0px 40px;
         border: 1px solid rgba(234, 140, 0, 0.70);
         padding: 120px 0;
-        margin-right: calc(var(--margin-calc) + 5px);
-        padding-right: calc(var(--padding-calc) - 5px);
+        margin-right: calc(var(--margin-calc));
+        padding-right: calc(var(--padding-calc) + 5px);
 
         .box {
           max-width: 290px;
@@ -524,6 +524,7 @@ header {
           margin: 0 auto;
           padding-left: 10px;
           padding: 50px;
+
           .title {
             font-size: 42px;
           }
@@ -533,8 +534,12 @@ header {
           border-radius: 40px;
           margin-right: 0;
           padding-right: 0;
+
           .box {
+            max-width: 500px;
+            padding: 0 15px;
             margin: auto;
+
             form {
               input {
                 font-size: 14px;
@@ -709,7 +714,7 @@ header {
 
   .sixth {
     background-color: var(--color-black);
-    padding: 200px 0;
+    padding: 200px 15px;
     border-radius: 40px;
 
     .container {
@@ -824,7 +829,7 @@ header {
     }
 
     @media screen and (max-width: 1200px) {
-      padding: 50px 20px;
+      padding: 50px 15px;
       .container {
         grid-template-columns: 1fr;
         gap: 30px;

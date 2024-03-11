@@ -15,12 +15,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 *::-webkit-scrollbar {
-  background: linear-gradient(180deg, #AE6900 0%, #231A0C 100%);
+  background-color: #E4E3E3;
+  border-radius: 8px;
   width: 8px;
   overflow: hidden;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: var(--color-black);
+  background-color: #BBC2C9;
   border-radius: 8px;
 }
 a {
@@ -543,8 +544,8 @@ footer {
     .first {
       margin-right: -100px;
       border-radius:  40px;
-      margin-left: calc((( var(--container-width) - 100vw ) / 2) + 15px);
-      padding-left: calc((( 100vw - var(--container-width) ) / 2) - 15px);
+      margin-left: calc(var(--margin-calc) + 1px);
+      padding-left: calc(var(--padding-calc) - 1px);
       z-index: 2;
 
       .row {
@@ -583,8 +584,9 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-right: calc((( var(--container-width) - 100vw ) / 2) + 15px);
-      padding-right: calc((( 100vw - var(--container-width) ) / 2) - 15px);
+
+      margin-right: calc(var(--margin-calc) + 1px);
+      padding-right: calc(var(--padding-calc) - 1px);
 
       .address {
         line-height: 32px;
