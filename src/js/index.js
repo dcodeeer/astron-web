@@ -27,11 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     breakpoints: {
-      1249: {
-        spaceBetween: 15,
-      },
       1250: {
-        spaceBetween: 64,
+        spaceBetween: 10,
       },
     }
   });

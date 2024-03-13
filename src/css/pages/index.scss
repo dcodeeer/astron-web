@@ -1,12 +1,25 @@
 header {
   background: transparent;
-  
   .container {
+    .logo {
+      height: 56px;
+      svg {
+        height: 100%;
+      }
+    }
     nav {
       a {
         opacity: 1;
       }
     }
+  }
+
+  @media screen and (max-width: 1536px) {
+    .container {
+      .logo {
+        height: 37px;
+      }
+    }    
   }
 }
 
@@ -36,7 +49,7 @@ header {
     .container {
       position: relative;
       z-index: 1;
-      height: 840px;
+      height: 100vh;
 
       display: flex;
       flex-direction: column;
@@ -55,15 +68,16 @@ header {
 
       .H1 {
         text-transform: uppercase;
+        margin-bottom: 120px;
       }
 
       .bottom {
         display: flex;
         align-items: center;
         gap: 20px;
-        margin: 120px 0;
+        margin-bottom: 100px;
 
-        .body-3-salara {
+        .body-3-sarala {
           font-weight: 700;
         }
       }
@@ -71,7 +85,6 @@ header {
 
     @media screen and (max-width: 1536px) {
       .container {
-        height: 724px;
         text-align: center;
 
         .logo {
@@ -87,9 +100,6 @@ header {
 
     @media screen and (max-width: 1120px) {
       .container {
-        height: 640px;
-        text-align: center;
-
         .logo {
           max-width: 400px;
           margin-bottom: 30px;
@@ -97,10 +107,6 @@ header {
 
         .H1 {
           font-size: 28px;
-        }
-
-        .bottom {
-          margin: 60px 0 100px 0;
         }
       }
     }
@@ -114,10 +120,11 @@ header {
 
         .H1 {
           font-size: 20px;
+          margin-bottom: 60px;
         }
 
         .bottom {
-          margin: 60px 0 150px 0;
+          margin-bottom: 150px;
         }
       }
     }
@@ -141,6 +148,7 @@ header {
         }
         .body-1 {
           color: var(--color-orange);
+          text-transform: uppercase;
         }
       }
 
@@ -191,7 +199,8 @@ header {
             }
             .text {
               max-width: 250px;
-              color: var(--color-orange);
+              color: #EA8C0080;
+              letter-spacing: 0.04em;
             }
           }
         }
@@ -306,9 +315,10 @@ header {
         top: 150px;
         left: 0;
         right: 0;
-        width: 100%;
-        text-align: center;
+        width: fit-content;
+        text-align: left;
         color: var(--dark-text);
+        margin: 0 auto;
       }
       .title {
         font-family: "Sarala", sans-serif;
@@ -416,6 +426,17 @@ header {
         .image {
           position: relative;
           overflow: hidden;
+          .new {
+            border-radius: 32px 0px 0px 32px;
+            background: rgba(234, 140, 0, 0.80);
+            padding: 16px 14px 14px 25px;
+            color: #fff;
+            position: absolute;
+            z-index: 2;
+            font-weight: 600;
+            top: 8px;
+            right: 0;
+          }
           img {
             width: 100%;
             height: 100%;
@@ -431,6 +452,12 @@ header {
 
           .H1 {
             margin-bottom: 8px;
+          }
+
+          .left {
+            .body-3-sarala {
+              color: #8C877B;
+            }
           }
 
           .right {
