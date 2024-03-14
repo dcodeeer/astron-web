@@ -139,7 +139,8 @@ header {
       .index-page .second .container .list .block .content .number {
         font-size: 80px; }
       .index-page .second .container .list .block .content .text {
-        font-size: 16px; } }
+        font-size: 16px;
+        width: 200px; } }
   @media screen and (max-width: 1120px) {
     .index-page .second {
       padding: 100px 0; }
@@ -324,11 +325,7 @@ header {
         top: 0;
         margin-bottom: 15px; }
       .index-page .third .container .title {
-        font-size: 72px;
-        text-align: center; }
-      .index-page .third .slider-container {
-        grid-template-columns: repeat(2, 60%);
-        padding-left: 0; } }
+        font-size: 100px; } }
   @media screen and (max-width: 1120px) {
     .index-page .third .container .mini-title {
       position: relative;
