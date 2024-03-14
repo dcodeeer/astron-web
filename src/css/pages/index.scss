@@ -2,6 +2,7 @@ header {
   background: transparent;
   .container {
     .logo {
+      width: min-content;
       height: 56px;
       svg {
         height: 100%;
@@ -332,7 +333,6 @@ header {
       .tabs {
         display: flex;
         align-items: center;
-        gap: 64px;
         margin-bottom: 64px;
         overflow: hidden;
         position: relative;
@@ -342,6 +342,7 @@ header {
           width: auto;
           border-radius: 60px;
           padding: 12px 25px;
+          color: #8C877B;
         }
 
         .tab-active {
@@ -564,8 +565,8 @@ header {
         background-color: var(--color-black);
         border-radius: 40px 40px 0px 0px;
 
-        margin-left: calc(var(--margin-calc));
-        padding-left: calc(var(--padding-calc));
+        margin-left: calc(var(--margin-calc) + 5px);
+        padding-left: calc(var(--padding-calc) - 5px);
         margin-right: -80px;
         display: flex;
         align-items: center;
@@ -584,11 +585,11 @@ header {
         border-radius: 40px 40px 0px 40px;
         border: 1px solid rgba(234, 140, 0, 0.70);
         padding: 120px 0;
-        margin-right: calc(var(--margin-calc));
-        padding-right: calc(var(--padding-calc));
+        margin-right: calc(var(--margin-calc) + 5px);
+        padding-right: calc(var(--padding-calc) - 5px);
 
         .box {
-          max-width: 80%;
+          max-width: 290px;
           margin-left: auto;
 
           .title {
@@ -607,6 +608,7 @@ header {
               padding: 24px 32px;
               color: var(--color-orange);
               margin-bottom: 4px;
+              height: 64px;
   
               &::placeholder {
                 color: var(--color-orange);
@@ -617,6 +619,8 @@ header {
 
           .button-3 {
             margin-top: 12px;
+            padding: 19px 32px;
+            line-height: 16px;
           }
         }
       }
@@ -676,6 +680,7 @@ header {
 
     .title {
       background-color: var(--color-black);
+      color: #ea8c00;
       padding: 35px 0;
       margin-bottom: 2px;
     }
@@ -688,7 +693,9 @@ header {
       .item {
         background-color: var(--color-black);
         padding-top: 32px;
-        padding-bottom: 80px;
+        // padding-bottom: 80px;
+
+        min-height: 400px;
 
         .H1 {
           margin-bottom: 16px;
@@ -723,7 +730,11 @@ header {
           .name {
             color: var(--color-orange);
             text-decoration: underline;
+            line-height: 140%;
           }
+        }
+        .text {
+          color: #8C877B;
         }
       }
     }
@@ -821,7 +832,7 @@ header {
 
     .container {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: minmax(500px, 887px) 1fr;
       gap: 80px;
 
       .date {
@@ -833,6 +844,7 @@ header {
         .title {
           margin-bottom: 40px;
           color: var(--color-orange);
+          text-transform: uppercase;
         }
         .image {
           width: 100%;
@@ -884,6 +896,10 @@ header {
           .description {
             margin-bottom: 32px;
           }
+
+          .date {
+            color: #8C877B80; 
+          }
         }
 
         .bottom {
@@ -892,6 +908,9 @@ header {
           align-items: flex-start;
 
           .row {
+            .date {
+              color: #8C877B80;
+            }
             .body-1 {
               text-decoration: underline;
             }

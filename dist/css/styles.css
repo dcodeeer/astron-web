@@ -225,6 +225,8 @@ header {
       display: grid;
       grid-template-columns: auto auto;
       gap: 16px; }
+      header .container .end .button-1, header .container .end .button-2 {
+        padding: 17px 22px; }
       header .container .end .button-1 {
         text-transform: uppercase;
         font-weight: 700;
@@ -429,7 +431,7 @@ footer {
     footer .top .first {
       margin-right: -100px;
       border-radius: 40px;
-      margin-left: calc(var(--margin-calc));
+      margin-left: calc(var(--margin-calc) + 5px);
       padding-left: calc(var(--padding-calc) - 10px);
       z-index: 2; }
       footer .top .first .row {
@@ -460,8 +462,8 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-right: calc(var(--margin-calc));
-      padding-right: calc(var(--padding-calc)); }
+      margin-right: calc(var(--margin-calc) + 5px);
+      padding-right: calc(var(--padding-calc) - 10px); }
       footer .top .third .address {
         line-height: 32px;
         color: var(--color-white); }
@@ -481,8 +483,7 @@ footer {
         justify-content: flex-end;
         gap: 48px; }
         footer .bottom .container nav a {
-          color: var(--color-white);
-          opacity: 0.4;
+          color: #D8CDBB;
           transition: 0.35s; }
           footer .bottom .container nav a:hover {
             opacity: 1; }
