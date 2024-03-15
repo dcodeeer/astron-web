@@ -68,7 +68,7 @@ body {
 
 @media screen and (max-width: 1280px) {
   :root {
-    --container-width: 1080px; } }
+    --container-width: 1120px; } }
 
 @media screen and (max-width: var(--container-width)) {
   :root {
@@ -167,7 +167,7 @@ body {
 
 .wrapper {
   position: relative;
-  margin-top: 90px;
+  margin-top: 5px;
   margin-bottom: 5px; }
   .wrapper .container {
     display: grid;
@@ -185,7 +185,7 @@ body {
       border-radius: 40px;
       background-color: #0D0D0D;
       margin-right: calc(var(--margin-calc) + 5px); }
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1120px) {
     .wrapper .container content {
       padding-left: 12px;
       margin-left: 0; }
@@ -197,8 +197,8 @@ body {
 header {
   background-color: #0D0D0D;
   border-radius: 0px 0px 40px 40px;
-  width: calc(100% - 10px);
-  position: fixed;
+  width: 100%;
+  position: sticky;
   top: 0;
   padding: 0 15px;
   z-index: 99;

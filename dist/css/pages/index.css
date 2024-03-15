@@ -1,4 +1,6 @@
 header {
+  width: calc(100% - 10px);
+  position: fixed;
   background: transparent; }
   header .container .logo {
     width: min-content;

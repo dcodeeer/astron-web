@@ -75,7 +75,7 @@ body {
 
 @media screen and (max-width: 1280px) {
   :root {
-    --container-width: 1080px;
+    --container-width: 1120px;
   }
 }
 
@@ -191,8 +191,9 @@ body {
 
 .wrapper {
   position: relative;
-  margin-top: 90px;
+  margin-top: 5px;
   margin-bottom: 5px;
+  
   .container {
     display: grid;
     grid-template-columns: 69fr 31fr;
@@ -215,7 +216,7 @@ body {
     }
   }
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1120px) {
     .container {
       content {
         padding-left: 12px;
@@ -235,8 +236,8 @@ body {
 header {
   background-color: #0D0D0D;
   border-radius: 0px 0px 40px 40px;
-  width: calc(100% - 10px);
-  position: fixed;
+  width: 100%;
+  position: sticky;
   top: 0;
   padding: 0 15px;
   z-index: 99;

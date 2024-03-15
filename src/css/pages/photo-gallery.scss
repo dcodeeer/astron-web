@@ -1,0 +1,184 @@
+.wrapper {
+  .container {
+    content {
+      .tabs {
+        border-radius: 98px;
+        border: 1px solid rgba(234, 140, 0, 0.10);
+        padding: 4px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 40px 0;
+
+        .tab{
+          color: #EA8C00;
+          text-align: center;
+          padding: 24px 8px;
+          line-height: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+        .tab.active {
+          border-radius: 100px;
+          background: rgba(234, 140, 0, 0.10);
+        }
+      }
+      .list {
+        display: grid;
+        grid-template-columns: 57fr 43fr;
+        grid-template-rows: masonry;
+        gap: 4px;
+        margin-left: calc(var(--margin-calc) + 8%);
+
+        .item {
+          display: block;
+          position: relative;
+          border-radius: 40px;
+
+          img {
+            width: 100%;
+          }
+
+          &:hover .box {
+            background: rgba(13, 13, 13, 0.8);
+          }
+
+          &:hover .box .block .arrow {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          .box {
+            background: rgba(13, 13, 13, 0.5);
+            position: absolute;
+            z-index: 2;
+            padding: 40px 10px 0 40px;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            transition: 0.35s;
+
+            .block {
+              display: grid;
+              grid-template-columns: 1fr 80px;
+              align-items: center;
+              gap: 20px;
+
+              .H0 {
+                line-height: 100%;
+                color: #D8CDBB;
+                word-break: break-word;
+              }
+
+              .arrow {
+                background-color: #EA8C00;
+                width: 80px;
+                height: 80px;
+                border-radius: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 15px 2px rgba(234, 140, 0, 0.70);
+                transition: 0.35s;
+                opacity: 0;
+                visibility: hidden;
+
+                &::after {
+                  content: '';
+                  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none"><path d="M0.75 9H22.25M22.25 9L14.75 1.5M22.25 9L14.75 16.5" stroke="white" stroke-width="3"/></svg>');
+                  background-repeat: no-repeat;
+                  display: block;
+                  width: 25px;
+                  height: 18px;
+                  position: absolute;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      padding: 100px 0 0 150px;
+      padding-right: calc(var(--padding-calc));
+      
+      .title {
+        margin-bottom: 64px;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        .row {
+          .body-3 {
+            color: #8C877B;
+            margin-bottom: 16px;
+          }
+          .body-1 {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+    }
+  }
+
+  @media screen and (max-width: 1536px) {
+    .container {
+      aside {
+        padding: 80px 40px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1120px) {
+    .container {
+      width: 100%;
+
+      grid-template-columns: 1fr;
+
+      content {
+        margin-left: 0;
+        padding: 40px 20px;
+
+        .list {
+          margin-left: 0;
+        }
+      }
+
+      aside {
+        padding: 40px 30px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 912px) {
+    .container {
+      content {
+        .title {
+          font-size: 32px;
+        }
+        .tabs {
+          grid-template-columns: 1fr;
+          border: none;
+        }
+        .list {
+          grid-template-columns: 1fr;
+
+          .item {
+            .box {
+              .block {
+                .H0 {
+                  font-size: 32px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }    
+  }
+}
