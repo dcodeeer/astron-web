@@ -139,6 +139,22 @@ header {
     border-radius: 48px;
     padding: 180px 15px;
     margin-bottom: 5px;
+    position: relative;
+
+    .left-smoke {
+      top: 30%;
+      left: -112px;
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .right-smoke {
+      top: 160px;
+      right: 0;
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+    }
 
     .container {
       .top {
@@ -389,11 +405,9 @@ header {
     }
 
     .slider-container {
-      display: grid;
-      grid-template-columns: repeat(3, 40%);
+      display: flex;
       align-items: center;
       gap: 4px;
-      padding-left: 75px;
       position: relative;
       overflow: hidden;
 
@@ -423,7 +437,12 @@ header {
         right: 0;
       }
 
+      .swiper-wrapper {
+        padding-left: 75px;
+      }
+
       .swiper-slide {
+        width: 40%;
         display: grid;
         grid-template-rows: 4fr 1fr;
         height: 800px;
@@ -471,6 +490,7 @@ header {
             align-items: center;
             justify-content: space-between;
             color: var(--color-orange);
+
             .count {
               display: flex;
               flex-direction: column;
@@ -516,6 +536,13 @@ header {
         }
         .title {
           font-size: 48px;
+        }
+      }
+      .slider-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 60%;
+          }
         }
       }
     }

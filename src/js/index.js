@@ -100,4 +100,132 @@ document.addEventListener('DOMContentLoaded', () => {
   const blocks = document.querySelectorAll('.slide-open-modal');
   blocks.forEach(block => block.addEventListener('click', modalOpenListener))
   // modal
+
+
+  // animation
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollToPlugin)
+
+  gsap.fromTo(
+    'header',
+    { y: -100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5 });
+
+  // first
+  gsap.fromTo(
+    '.index-page .first .container',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5},
+  );
+
+  // second
+  const second = {};
+  second.trigger = {
+    trigger: '.index-page .second',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+
+  gsap.fromTo(
+    '.index-page .second .container .top',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: second.trigger},
+  );
+
+  gsap.fromTo(
+    '.index-page .second .container .list',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.8, scrollTrigger: second.trigger},
+  );
+
+  // third
+  const third = {};
+  third.trigger = {
+    trigger: '.index-page .third .container',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+
+  gsap.fromTo(
+    '.index-page .third .container .mini-title',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: third.trigger},
+  );
+
+  gsap.fromTo(
+    '.index-page .third .container .title',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: third.trigger},
+  );
+  gsap.fromTo(
+    '.index-page .third .container .tabs',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: third.trigger},
+  );
+  
+  gsap.fromTo(
+    '.index-page .third .slider-container',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 1.25, scrollTrigger: third.trigger}
+  );
+
+  const fourth = {};
+  fourth.trigger = {
+    trigger: '.index-page .fourth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  
+  gsap.fromTo(
+    '.index-page .fourth .container .left .title',
+    { x: -100, opacity: 0 },
+    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
+  );
+
+  gsap.fromTo(
+    '.index-page .fourth .container .right .box',
+    { x: 100, opacity: 0 },
+    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
+  );
+
+
+  // fifth
+  const fifth = {};
+  fifth.trigger = {
+    trigger: '.index-page .fifth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+
+  gsap.fromTo(
+    '.index-page .fifth',
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+  );
+
+  // sixth 
+  const sixth = {};
+  sixth.trigger = {
+    trigger: '.index-page .sixth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+
+  gsap.fromTo(
+    '.index-page .sixth .container .left',
+    { x: -100, opacity: 0 },
+    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
+  );
+
+  gsap.fromTo(
+    '.index-page .sixth .container .right',
+    { x: 100, opacity: 0 },
+    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
+  );
+
 });
