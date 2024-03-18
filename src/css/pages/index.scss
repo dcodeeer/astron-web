@@ -149,10 +149,33 @@ header {
       pointer-events: none;
     }
     .right-smoke {
+      width: 45%;
       top: 160px;
-      right: 0;
+      right: -100px;
       position: absolute;
       z-index: 5;
+      pointer-events: none;
+    }
+    .left-brick {
+      min-width: 250px;
+      width: 28%;
+      left: -13%;
+      bottom: -25%;
+      transform: rotate(-24deg);
+      position: absolute;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .right-brick {
+      min-width: 250px;
+      width: 25%;
+      right: -12%;
+      bottom: -45%;
+      transform: rotate(13deg);
+      transform: scale(1.3);
+      filter: blur(20px);
+      position: absolute;
+      z-index: 3;
       pointer-events: none;
     }
 
@@ -285,6 +308,19 @@ header {
 
     @media screen and (max-width: 912px) {
       padding: 80px 0 40px 0;
+
+      .right-brick {
+        display: none;
+      }
+      .left-brick {
+        display: none;
+      }
+      .right-smoke {
+        display: none;
+      }
+      .left-smoke {
+        display: none;
+      }
       .container {
         .top {
           margin-bottom: 30px;
@@ -331,6 +367,9 @@ header {
     position: relative;
 
     .container {
+      position: relative;
+      z-index: 8;
+
       .mini-title {
         position: absolute;
         top: 150px;
@@ -409,6 +448,7 @@ header {
       align-items: center;
       gap: 4px;
       position: relative;
+      z-index: 8;
       overflow: hidden;
 
       .btn {
@@ -604,6 +644,12 @@ header {
           font-weight: 700;
           line-height: 100%;
         }
+        .open-dropdown {
+          color: #EA8C00;
+          line-height: 26px;
+          text-decoration-line: underline;
+          text-transform: uppercase;
+        }
       }
 
       .right {
@@ -703,6 +749,16 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    position: relative;
+
+    .fifth-right-smoke {
+      width: 250%;
+      margin-right: -79%;
+      position: absolute;
+      transform: rotate(-30deg);
+      z-index: 5;
+      pointer-events: none;
+    }
 
     .title {
       background-color: var(--color-black);
@@ -757,6 +813,7 @@ header {
             color: var(--color-orange);
             text-decoration: underline;
             line-height: 140%;
+            cursor: pointer;
           }
         }
         .text {
@@ -855,6 +912,51 @@ header {
     background-color: var(--color-black);
     padding: 200px 15px;
     border-radius: 40px;
+    position: relative;
+
+    .sixth-right-brick {
+      right: 0;
+      top: -25px;
+      margin-right: -8%;
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .sixth-right-smoke {
+      opacity: 0.3;
+      margin-right: -40%;
+      right: 0;
+      top: 0;
+      position: absolute;
+      transform: rotate(-49deg);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+
+    .sixth-left-brick {
+      width: 65%;
+      transform: rotate(-24deg);
+      filter: blur(15px);
+      left: -50%;
+      bottom: -17%;
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .sixth-left-smoke {
+      width: 250%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transform: rotate(-150deg);
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.5;
+      filter: blur(12px); 
+    }
 
     .container {
       display: grid;
@@ -1216,4 +1318,31 @@ header {
 }
 .modal-box-opened {
   display: flex;
+}
+
+
+.pdf-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    embed {
+      width: 70%;
+      height: 80%;
+    }
+  }
+}
+
+.pdf-modal.show {
+  display: block;
 }

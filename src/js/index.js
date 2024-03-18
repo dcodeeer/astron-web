@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('.pdf-modal');
+
+  const closeModal = (e) => {
+    modal.classList.remove('show');
+    modal.removeEventListener('click', closeModal);
+    document.querySelector('body').style.overflowY = 'visible';
+  };
+
+  const openModal = (e) => {
+    modal.classList.add('show');
+    const url = e.currentTarget.querySelector('.name').getAttribute('data-value');
+    console.log(url)
+    modal.querySelector('embed').src = url;
+
+    document.querySelector('body').style.overflowY = 'hidden';
+    modal.addEventListener('click', closeModal);
+  };
+
+  document.querySelectorAll('.fifth .item').forEach((btn) => btn.addEventListener('click', openModal))
+
+
   // header
   document.addEventListener('scroll', (e) => {
     const header = document.querySelector('header');
@@ -106,10 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin)
 
-  gsap.fromTo(
-    'header',
-    { y: -100, opacity: 0 },
-    { y: 0, opacity: 1, delay: 0.5 });
+  ScrollTrigger.create({
+    trigger: ".left-brick",
+    start: "-100px top", 
+    end: "bottom 300px",
+    pin: ".left-brick"
+  });
+
+  ScrollTrigger.create({
+    trigger: ".right-brick",
+    start: "-100px top", 
+    end: "bottom 300px",
+    pin: ".right-brick"
+  });
+
+  // gsap.fromTo(
+  //   'header',
+  //   { y: -100, opacity: 0 },
+  //   { y: 0, opacity: 1, delay: 0.5 });
 
   // first
   gsap.fromTo(
@@ -181,14 +216,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   gsap.fromTo(
     '.index-page .fourth .container .left .title',
-    { x: -100, opacity: 0 },
-    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
   );
 
   gsap.fromTo(
     '.index-page .fourth .container .right .box',
-    { x: 100, opacity: 0 },
-    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fourth.trigger },
   );
 
 
@@ -201,11 +236,74 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleActions: "play pause resume reset"
   };
 
+  
   gsap.fromTo(
-    '.index-page .fifth',
+    `.index-page .fifth .left .title .text`,
     { y: 100, opacity: 0 },
     { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
   );
+  for (let i = 0; i < 3; i++) {
+    let className = 'item-first';
+
+    if (i == 1) {
+      className = 'item-second';
+    } else if (i == 2) {
+      className = 'item-third';
+    } else if (i == 3) {
+      className = 'item-fourth';
+    }
+
+    gsap.fromTo(
+      `.index-page .fifth .left .list .${className} .top`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+    gsap.fromTo(
+      `.index-page .fifth .left .list .${className} .H1`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+    gsap.fromTo(
+      `.index-page .fifth .left .list .${className} .body-3`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+  }
+
+  gsap.fromTo(
+    `.index-page .fifth .right .title .text`,
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+  );
+
+  for (let i = 0; i < 3; i++) {
+    let className = 'item-first';
+
+    if (i == 1) {
+      className = 'item-second';
+    } else if (i == 2) {
+      className = 'item-third';
+    } else if (i == 3) {
+      className = 'item-fourth';
+    }
+
+    gsap.fromTo(
+      `.index-page .fifth .right .list .${className} .top`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+    gsap.fromTo(
+      `.index-page .fifth .right .list .${className} .H1`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+    gsap.fromTo(
+      `.index-page .fifth .right .list .${className} .body-3`,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.5, scrollTrigger: fifth.trigger },
+    );
+  }
+
 
   // sixth 
   const sixth = {};
@@ -218,14 +316,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.fromTo(
     '.index-page .sixth .container .left',
-    { x: -100, opacity: 0 },
-    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
   );
 
   gsap.fromTo(
     '.index-page .sixth .container .right',
-    { x: 100, opacity: 0 },
-    { x: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
   );
 
 });
