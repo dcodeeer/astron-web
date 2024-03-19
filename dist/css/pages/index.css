@@ -399,7 +399,9 @@ header {
             font-size: 20px; } }
 
 .index-page .fourth {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2; }
   .index-page .fourth .container {
     display: grid;
     grid-template-columns: 2fr 1fr; }
@@ -417,6 +419,11 @@ header {
         font-style: normal;
         font-weight: 700;
         line-height: 100%; }
+        .index-page .fourth .container .left .title .bottom {
+          display: flex;
+          align-items: end; }
+          .index-page .fourth .container .left .title .bottom .hidden {
+            display: none; }
       .index-page .fourth .container .left .open-dropdown {
         color: #EA8C00;
         line-height: 26px;
@@ -481,7 +488,8 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   .index-page .fifth .fifth-right-smoke {
     width: 250%;
     margin-right: -79%;
@@ -615,11 +623,10 @@ header {
     z-index: 5;
     pointer-events: none; }
   .index-page .sixth .sixth-left-smoke {
-    width: 250%;
-    left: 0;
-    top: 0;
+    transform: scale(2.2) rotate(150deg);
+    left: -45%;
+    top: -60%;
     position: absolute;
-    transform: rotate(-150deg);
     z-index: 5;
     pointer-events: none;
     opacity: 0.5;
@@ -627,7 +634,9 @@ header {
   .index-page .sixth .container {
     display: grid;
     grid-template-columns: minmax(500px, 887px) 1fr;
-    gap: 80px; }
+    gap: 80px;
+    z-index: 10;
+    position: relative; }
     .index-page .sixth .container .date {
       color: var(--dark-text);
       margin-bottom: 16px; }

@@ -294,6 +294,20 @@
             <div class='bottom'>
               <div>услуг</div>
               <div class='open-dropdown body-3-sarala'>посмотреть актуальные<br /> коммерческие предложения</div>
+              <div class='dropdown show hidden' id=''>
+                <input class='hidden' type='hidden' name='location' value='' />
+                <div class='select'>
+                  <input id='first-location-input' type='text' readonly placeholder='все области' />
+                  <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M1 1L8 8L15 1" stroke="#EA8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class='options'>
+                  <div class='option' data-value='0'>все области</div>
+                  <div class='option' data-value='1'>Винницкая</div>
+                  <div class='option' data-value='2'>Волынская</div>
+                  <div class='option' data-value='3'>Днепропетровская</div>
+                  <div class='option' data-value='4'>Донецкая</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -303,8 +317,7 @@
             <form>
               <input class='body-2' type='text' placeholder='Номер телефона' />
               <input class='body-2' type='text' placeholder='Имя' />
-              <button class='button-3 body-3-sarala
-'>Отправить</button>
+              <button class='button-3 body-3-sarala'>Отправить</button>
             </form>
           </div>
         </div>
@@ -680,6 +693,7 @@
   <script type='text/javascript' src='./dist/js/ScrollTrigger.min.js'></script>
 
   <script type='text/javascript' src='./dist/js/main.js'></script>
+  <script type='text/javascript' src='./dist/js/dropdown.js'></script>
   <script type='text/javascript' src='./dist/js/index.js'></script>
 </body>
 </html>

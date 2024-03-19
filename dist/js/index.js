@@ -1,4 +1,689 @@
-parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"Focm":[function(require,module,exports) {
-document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".pdf-modal"),t=function t(r){e.classList.remove("show"),e.removeEventListener("click",t),document.querySelector("body").style.overflowY="visible"},r=function(r){e.classList.add("show");var i=r.currentTarget.querySelector(".name").getAttribute("data-value");console.log(i),e.querySelector("embed").src=i,document.querySelector("body").style.overflowY="hidden",e.addEventListener("click",t)};document.querySelectorAll(".fifth .item").forEach(function(e){return e.addEventListener("click",r)}),document.addEventListener("scroll",function(e){var t=document.querySelector("header");window.scrollY>50?t.style.background="#0D0D0D":t.style.background="transparent"});new Swiper(".slider-container",{slidesPerView:"auto",spaceBetween:4,navigation:{nextEl:".next",prevEl:".prev"}}),new Swiper("#slider-tabs",{slidesPerView:"auto",navigation:{prevEl:"#tab-prev-btn",nextEl:"#tab-next-btn"},breakpoints:{1250:{spaceBetween:10}}});var i=new Swiper("#modal-slider",{init:!1,slidesPerView:"auto",navigation:{prevEl:"#modal-prev",nextEl:"#modal-next"},breakpoints:{1249:{spaceBetween:15},1250:{spaceBetween:64}}}),o=document.querySelector('.tab-slides[data-id="1"]');document.querySelector("#modal-slider .swiper-wrapper").innerHTML=o.innerHTML,i.init();var a=function(e){document.querySelectorAll(".tab-title").forEach(function(e){return e.classList.remove("active")}),e.currentTarget.classList.add("active");var t=e.currentTarget.getAttribute("data-id"),r=document.querySelector(".tab-slides[data-id='"+t+"']");console.log(r),document.querySelector("#modal-slider .swiper-wrapper").innerHTML=r.innerHTML,i.update();var o=document.querySelector(".tab-content[data-id='"+t+"']");document.querySelector(".tab-content.visible").classList.remove("visible"),o.classList.add("visible")};document.querySelectorAll(".tab-title").forEach(function(e){return e.addEventListener("click",a)});var n=function(){var e=document.querySelector("body"),t=document.querySelector(".modal-box");t.classList.add("modal-box-opened"),e.style.overflowY="hidden",document.getElementById("close-modal").addEventListener("click",function(){t.classList.remove("modal-box-opened"),e.style.overflowY="visible"})};document.querySelectorAll(".slide-open-modal").forEach(function(e){return e.addEventListener("click",n)}),gsap.registerPlugin(ScrollTrigger),gsap.registerPlugin(ScrollToPlugin),ScrollTrigger.create({trigger:".left-brick",start:"-100px top",end:"bottom 300px",pin:".left-brick"}),ScrollTrigger.create({trigger:".right-brick",start:"-100px top",end:"bottom 300px",pin:".right-brick"}),gsap.fromTo(".index-page .first .container",{y:100,opacity:0},{y:0,opacity:1,delay:.5});var l={trigger:{trigger:".index-page .second",start:"0px bottom",end:"bottom top",toggleActions:"play pause resume reset"}};gsap.fromTo(".index-page .second .container .top",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:l.trigger}),gsap.fromTo(".index-page .second .container .list",{y:100,opacity:0},{y:0,opacity:1,delay:.8,scrollTrigger:l.trigger});var c={trigger:{trigger:".index-page .third .container",start:"0px bottom",end:"bottom top",toggleActions:"play pause resume reset"}};gsap.fromTo(".index-page .third .container .mini-title",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:c.trigger}),gsap.fromTo(".index-page .third .container .title",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:c.trigger}),gsap.fromTo(".index-page .third .container .tabs",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:c.trigger}),gsap.fromTo(".index-page .third .slider-container",{y:100,opacity:0},{y:0,opacity:1,delay:1.25,scrollTrigger:c.trigger});var g={trigger:{trigger:".index-page .fourth",start:"0px bottom",end:"bottom top",toggleActions:"play pause resume reset"}};gsap.fromTo(".index-page .fourth .container .left .title",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:g.trigger}),gsap.fromTo(".index-page .fourth .container .right .box",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:g.trigger});var s={trigger:{trigger:".index-page .fifth",start:"0px bottom",end:"bottom top",toggleActions:"play pause resume reset"}};gsap.fromTo(".index-page .fifth .left .title .text",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger});for(var d=0;d<3;d++){var p="item-first";1==d?p="item-second":2==d?p="item-third":3==d&&(p="item-fourth"),gsap.fromTo(".index-page .fifth .left .list .".concat(p," .top"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger}),gsap.fromTo(".index-page .fifth .left .list .".concat(p," .H1"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger}),gsap.fromTo(".index-page .fifth .left .list .".concat(p," .body-3"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger})}gsap.fromTo(".index-page .fifth .right .title .text",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger});for(var y=0;y<3;y++){var m="item-first";1==y?m="item-second":2==y?m="item-third":3==y&&(m="item-fourth"),gsap.fromTo(".index-page .fifth .right .list .".concat(m," .top"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger}),gsap.fromTo(".index-page .fifth .right .list .".concat(m," .H1"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger}),gsap.fromTo(".index-page .fifth .right .list .".concat(m," .body-3"),{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:s.trigger})}var u={trigger:{trigger:".index-page .sixth",start:"0px bottom",end:"bottom top",toggleActions:"play pause resume reset"}};gsap.fromTo(".index-page .sixth .container .left",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:u.trigger}),gsap.fromTo(".index-page .sixth .container .right",{y:100,opacity:0},{y:0,opacity:1,delay:.5,scrollTrigger:u.trigger})});
-},{}]},{},["Focm"], null)
-//# sourceMappingURL=/index.js.map
+// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+parcelRequire = (function (modules, cache, entry, globalName) {
+  // Save the require from previous bundle to this closure if any
+  var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
+  var nodeRequire = typeof require === 'function' && require;
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire = typeof parcelRequire === 'function' && parcelRequire;
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error('Cannot find module \'' + name + '\'');
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = cache[name] = new newRequire.Module(name);
+
+      modules[name][0].call(module.exports, localRequire, module, module.exports, this);
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x){
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x){
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function (id, exports) {
+    modules[id] = [function (require, module) {
+      module.exports = exports;
+    }, {}];
+  };
+
+  var error;
+  for (var i = 0; i < entry.length; i++) {
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
+  }
+
+  if (entry.length) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(entry[entry.length - 1]);
+
+    // CommonJS
+    if (typeof exports === "object" && typeof module !== "undefined") {
+      module.exports = mainExports;
+
+    // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+     define(function () {
+       return mainExports;
+     });
+
+    // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+
+  // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
+  return newRequire;
+})({"index.js":[function(require,module,exports) {
+document.addEventListener('DOMContentLoaded', function () {
+  var modal = document.querySelector('.pdf-modal');
+  var closeModal = function closeModal(e) {
+    modal.classList.remove('show');
+    modal.removeEventListener('click', closeModal);
+    document.querySelector('body').style.overflowY = 'visible';
+  };
+  var openModal = function openModal(e) {
+    modal.classList.add('show');
+    var url = e.currentTarget.getAttribute('data-value');
+    console.log(url);
+    modal.querySelector('embed').src = url;
+    document.querySelector('body').style.overflowY = 'hidden';
+    modal.addEventListener('click', closeModal);
+  };
+  document.querySelectorAll('.fifth .item .name').forEach(function (btn) {
+    return btn.addEventListener('click', openModal);
+  });
+
+  // header
+  document.addEventListener('scroll', function (e) {
+    var header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.style.background = '#0D0D0D';
+    } else {
+      header.style.background = 'transparent';
+    }
+  });
+  // header end
+
+  var swiper = new Swiper('.slider-container', {
+    slidesPerView: "auto",
+    spaceBetween: 4,
+    navigation: {
+      nextEl: '.next',
+      prevEl: '.prev'
+    }
+  });
+  var swiper2 = new Swiper('#slider-tabs', {
+    slidesPerView: "auto",
+    navigation: {
+      prevEl: '#tab-prev-btn',
+      nextEl: '#tab-next-btn'
+    },
+    breakpoints: {
+      1250: {
+        spaceBetween: 10
+      }
+    }
+  });
+  var modalSlider = new Swiper('#modal-slider', {
+    init: false,
+    slidesPerView: "auto",
+    navigation: {
+      prevEl: '#modal-prev',
+      nextEl: '#modal-next'
+    },
+    breakpoints: {
+      1249: {
+        spaceBetween: 15
+      },
+      1250: {
+        spaceBetween: 64
+      }
+    }
+  });
+
+  // tab
+
+  var slides = document.querySelector('.tab-slides[data-id="1"]');
+  document.querySelector('#modal-slider .swiper-wrapper').innerHTML = slides.innerHTML;
+  modalSlider.init();
+  var tabOpenListener = function tabOpenListener(e) {
+    document.querySelectorAll('.tab-title').forEach(function (tabTitle) {
+      return tabTitle.classList.remove('active');
+    });
+    e.currentTarget.classList.add('active');
+    var id = e.currentTarget.getAttribute('data-id');
+    var slides = document.querySelector(".tab-slides[data-id='" + id + "']");
+    console.log(slides);
+    document.querySelector('#modal-slider .swiper-wrapper').innerHTML = slides.innerHTML;
+    modalSlider.update();
+    var content = document.querySelector(".tab-content[data-id='" + id + "']");
+    var currentVisible = document.querySelector(".tab-content.visible");
+    currentVisible.classList.remove('visible');
+    content.classList.add('visible');
+  };
+  var tabs = document.querySelectorAll('.tab-title');
+  tabs.forEach(function (tab) {
+    return tab.addEventListener('click', tabOpenListener);
+  });
+
+  // tab
+
+  // modal
+
+  var modalOpenListener = function modalOpenListener() {
+    var body = document.querySelector('body');
+    var modal = document.querySelector('.modal-box');
+    modal.classList.add('modal-box-opened');
+    body.style.overflowY = 'hidden';
+    document.getElementById('close-modal').addEventListener('click', function () {
+      modal.classList.remove('modal-box-opened');
+      body.style.overflowY = 'visible';
+    });
+  };
+  var blocks = document.querySelectorAll('.slide-open-modal');
+  blocks.forEach(function (block) {
+    return block.addEventListener('click', modalOpenListener);
+  });
+  // modal
+
+  var openDropdownButton = document.querySelector('.open-dropdown');
+  var openDropdownListener = function openDropdownListener(e) {
+    console.log('opend');
+    var target = e.currentTarget;
+    var dropdown = e.currentTarget.parentNode.querySelector('.dropdown');
+    dropdown.classList.remove('hidden');
+    dropdown.classList.add('show');
+    target.classList.add('hidden');
+    dropdownCloseListener = function (_dropdownCloseListener) {
+      function dropdownCloseListener(_x) {
+        return _dropdownCloseListener.apply(this, arguments);
+      }
+      dropdownCloseListener.toString = function () {
+        return _dropdownCloseListener.toString();
+      };
+      return dropdownCloseListener;
+    }(function (e) {
+      target.classList.remove('hidden');
+      dropdown.classList.add('hidden');
+      dropdown.removeEventListener('close', dropdownCloseListener);
+    });
+    dropdown.addEventListener('close', dropdownCloseListener);
+  };
+  openDropdownButton.addEventListener('click', openDropdownListener);
+
+  // animation
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
+  ScrollTrigger.create({
+    trigger: ".left-brick",
+    start: "-100px top",
+    end: "bottom 300px",
+    pin: ".left-brick"
+  });
+  ScrollTrigger.create({
+    trigger: ".right-brick",
+    start: "-100px top",
+    end: "bottom 300px",
+    pin: ".right-brick"
+  });
+  ScrollTrigger.create({
+    trigger: ".sixth-right-brick",
+    start: "-200px top",
+    end: "bottom 300px",
+    pin: ".sixth-right-brick"
+  });
+
+  // gsap.fromTo(
+  //   'header',
+  //   { y: -100, opacity: 0 },
+  //   { y: 0, opacity: 1, delay: 0.5 });
+
+  // first
+  gsap.fromTo('.index-page .first .container', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5
+  });
+
+  // second
+  var second = {};
+  second.trigger = {
+    trigger: '.index-page .second',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  gsap.fromTo('.index-page .second .container .top', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: second.trigger
+  });
+  gsap.fromTo('.index-page .second .container .list', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.8,
+    scrollTrigger: second.trigger
+  });
+
+  // third
+  var third = {};
+  third.trigger = {
+    trigger: '.index-page .third .container',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  gsap.fromTo('.index-page .third .container .mini-title', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: third.trigger
+  });
+  gsap.fromTo('.index-page .third .container .title', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: third.trigger
+  });
+  gsap.fromTo('.index-page .third .container .tabs', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: third.trigger
+  });
+  gsap.fromTo('.index-page .third .slider-container', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 1.25,
+    scrollTrigger: third.trigger
+  });
+  var fourth = {};
+  fourth.trigger = {
+    trigger: '.index-page .fourth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  gsap.fromTo('.index-page .fourth .container .left .title', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: fourth.trigger
+  });
+  gsap.fromTo('.index-page .fourth .container .right .box', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: fourth.trigger
+  });
+
+  // fifth
+  var fifth = {};
+  fifth.trigger = {
+    trigger: '.index-page .fifth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  gsap.fromTo(".index-page .fifth .left .title .text", {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: fifth.trigger
+  });
+  for (var i = 0; i < 3; i++) {
+    var className = 'item-first';
+    if (i == 1) {
+      className = 'item-second';
+    } else if (i == 2) {
+      className = 'item-third';
+    } else if (i == 3) {
+      className = 'item-fourth';
+    }
+    gsap.fromTo(".index-page .fifth .left .list .".concat(className, " .top"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+    gsap.fromTo(".index-page .fifth .left .list .".concat(className, " .H1"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+    gsap.fromTo(".index-page .fifth .left .list .".concat(className, " .body-3"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+  }
+  gsap.fromTo(".index-page .fifth .right .title .text", {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: fifth.trigger
+  });
+  for (var _i = 0; _i < 3; _i++) {
+    var _className = 'item-first';
+    if (_i == 1) {
+      _className = 'item-second';
+    } else if (_i == 2) {
+      _className = 'item-third';
+    } else if (_i == 3) {
+      _className = 'item-fourth';
+    }
+    gsap.fromTo(".index-page .fifth .right .list .".concat(_className, " .top"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+    gsap.fromTo(".index-page .fifth .right .list .".concat(_className, " .H1"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+    gsap.fromTo(".index-page .fifth .right .list .".concat(_className, " .body-3"), {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      delay: 0.5,
+      scrollTrigger: fifth.trigger
+    });
+  }
+
+  // sixth 
+  var sixth = {};
+  sixth.trigger = {
+    trigger: '.index-page .sixth',
+    start: '0px bottom',
+    end: 'bottom top',
+    toggleActions: "play pause resume reset"
+  };
+  gsap.fromTo('.index-page .sixth .container .left', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: sixth.trigger
+  });
+  gsap.fromTo('.index-page .sixth .container .right', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    delay: 0.5,
+    scrollTrigger: sixth.trigger
+  });
+});
+},{}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
+module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36055" + '/');
+  ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
+    var data = JSON.parse(event.data);
+    if (data.type === 'update') {
+      var handled = false;
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+          if (didAccept) {
+            handled = true;
+          }
+        }
+      });
+
+      // Enable HMR for CSS by default.
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
+    if (data.type === 'reload') {
+      ws.close();
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+  if (overlay) {
+    overlay.remove();
+  }
+}
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID;
+
+  // html encode message and stack trace
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return [];
+  }
+  var parents = [];
+  var k, d, dep;
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+  return parents;
+}
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
+  if (checkedAssets[id]) {
+    return;
+  }
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+    return true;
+  }
+}
+},{}]},{},["../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)

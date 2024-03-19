@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openModal = (e) => {
     modal.classList.add('show');
-    const url = e.currentTarget.querySelector('.name').getAttribute('data-value');
+    const url = e.currentTarget.getAttribute('data-value');
     console.log(url)
     modal.querySelector('embed').src = url;
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', closeModal);
   };
 
-  document.querySelectorAll('.fifth .item').forEach((btn) => btn.addEventListener('click', openModal))
+  document.querySelectorAll('.fifth .item .name').forEach((btn) => btn.addEventListener('click', openModal))
 
 
   // header
@@ -122,6 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
   blocks.forEach(block => block.addEventListener('click', modalOpenListener))
   // modal
 
+  const openDropdownButton = document.querySelector('.open-dropdown');
+  const openDropdownListener = (e) => {
+    console.log('opend')
+    const target = e.currentTarget;
+    const dropdown = e.currentTarget.parentNode.querySelector('.dropdown');
+    dropdown.classList.remove('hidden');
+    dropdown.classList.add('show');
+
+    target.classList.add('hidden');
+
+    dropdownCloseListener = (e) => {
+      target.classList.remove('hidden');
+      dropdown.classList.add('hidden');
+      dropdown.removeEventListener('close', dropdownCloseListener);
+    }
+    dropdown.addEventListener('close', dropdownCloseListener);
+  };
+
+  openDropdownButton.addEventListener('click', openDropdownListener);
+
 
   // animation
   gsap.registerPlugin(ScrollTrigger)
@@ -139,6 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
     start: "-100px top", 
     end: "bottom 300px",
     pin: ".right-brick"
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sixth-right-brick",
+    start: "-200px top", 
+    end: "bottom 300px",
+    pin: ".sixth-right-brick"
   });
 
   // gsap.fromTo(
@@ -325,5 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { y: 100, opacity: 0 },
     { y: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
   );
+  
+  
 
 });
