@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').style.overflowY = 'visible';
   };
 
-  const openModal = (e) => {
+  const openModal = (path) => {
     modal.classList.add('show');
-    const url = e.currentTarget.getAttribute('data-value');
-    console.log(url)
-    modal.querySelector('embed').src = url;
+    modal.querySelector('embed').src = path;
 
     document.querySelector('body').style.overflowY = 'hidden';
     modal.addEventListener('click', closeModal);
   };
 
-  document.querySelectorAll('.fifth .item .name').forEach((btn) => btn.addEventListener('click', openModal))
+  document.querySelectorAll('.fifth .item .name').forEach((btn) => btn.addEventListener('click', (e) => {
+    openModal(e.currentTarget.getAttribute('data-value'));
+  }));
 
 
   // header
@@ -141,11 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   openDropdownButton.addEventListener('click', openDropdownListener);
+  
+  document.getElementById('pdf-value').addEventListener('change', (e) => {
+    openModal(e.currentTarget.value);
+  });
 
 
   // animation
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin)
+
+  //
+
+  document.getElementById('go-to-bottom').addEventListener('click', (e) => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: '#index-fifth',
+      ease: "Power1.easeInOut"
+    });
+  });
 
   ScrollTrigger.create({
     trigger: ".left-brick",

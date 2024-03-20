@@ -125,16 +125,16 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.removeEventListener('click', closeModal);
     document.querySelector('body').style.overflowY = 'visible';
   };
-  var openModal = function openModal(e) {
+  var openModal = function openModal(path) {
     modal.classList.add('show');
-    var url = e.currentTarget.getAttribute('data-value');
-    console.log(url);
-    modal.querySelector('embed').src = url;
+    modal.querySelector('embed').src = path;
     document.querySelector('body').style.overflowY = 'hidden';
     modal.addEventListener('click', closeModal);
   };
   document.querySelectorAll('.fifth .item .name').forEach(function (btn) {
-    return btn.addEventListener('click', openModal);
+    return btn.addEventListener('click', function (e) {
+      openModal(e.currentTarget.getAttribute('data-value'));
+    });
   });
 
   // header
@@ -254,10 +254,23 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdown.addEventListener('close', dropdownCloseListener);
   };
   openDropdownButton.addEventListener('click', openDropdownListener);
+  document.getElementById('pdf-value').addEventListener('change', function (e) {
+    openModal(e.currentTarget.value);
+  });
 
   // animation
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
+
+  //
+
+  document.getElementById('go-to-bottom').addEventListener('click', function (e) {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: '#index-fifth',
+      ease: "Power1.easeInOut"
+    });
+  });
   ScrollTrigger.create({
     trigger: ".left-brick",
     start: "-100px top",
@@ -542,7 +555,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36055" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38379" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
