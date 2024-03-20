@@ -654,7 +654,6 @@ header {
         margin-right: -80px;
         display: flex;
         align-items: center;
-        z-index: 2;
 
         .title {
           font-family: "Sarala", sans-serif;
@@ -708,8 +707,7 @@ header {
         padding: 120px 0;
         margin-right: calc(var(--margin-calc) + 5px);
         padding-right: calc(var(--padding-calc) - 5px);
-        z-index: 1;
-
+        
         .box {
           max-width: 290px;
           margin-left: auto;
@@ -769,6 +767,7 @@ header {
           border-radius: 40px;
           margin: 0 auto;
           padding: 50px;
+          z-index: 2;
 
           .title {
             font-size: 42px;
@@ -779,6 +778,7 @@ header {
           border-radius: 40px;
           margin-right: 0;
           padding-right: 0;
+          z-index: 1;
 
           .box {
             padding: 0 15px;
