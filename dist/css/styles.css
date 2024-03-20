@@ -462,7 +462,10 @@ footer {
           width: 64px;
           height: 100px;
           border-radius: 8px;
-          background-color: #EA8C001A; }
+          background-color: #EA8C001A;
+          transition: 0.35s; }
+          footer .top .second .socials .row:hover {
+            background-color: rgba(234, 140, 0, 0.4); }
     footer .top .third {
       display: flex;
       flex-direction: column;
@@ -491,7 +494,8 @@ footer {
           color: #D8CDBB;
           transition: 0.35s; }
           footer .bottom .container nav a:hover {
-            opacity: 1; }
+            opacity: 1;
+            color: var(--color-orange); }
       footer .bottom .container .button-2 {
         color: var(--color-white);
         font-weight: 700; }

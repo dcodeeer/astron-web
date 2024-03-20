@@ -85,6 +85,15 @@ header {
         .body-3-sarala {
           font-weight: 700;
         }
+
+        button {
+          color: rgba(234, 140, 0, 0.1);
+          transition: 0.35s;
+
+          &:hover {
+            color: rgba(234, 140, 0, 0.3);
+          }
+        }
       }
     }
 
@@ -373,7 +382,7 @@ header {
 
       .mini-title {
         position: absolute;
-        top: 150px;
+        top: 0;
         left: 0;
         right: 0;
         width: fit-content;
@@ -407,7 +416,6 @@ header {
 
           &:hover {
             background: rgba(234, 140, 0, 0.10);
-            font-weight: 700;
             color: var(--color-orange);
           }
         }
@@ -657,7 +665,7 @@ header {
 
           .bottom {
             display: flex;
-            gap: 20px;
+            gap: 50px;
             align-items: end;
             cursor: pointer;
 
@@ -670,7 +678,8 @@ header {
               line-height: 26px;
               text-decoration-line: underline;
               text-transform: uppercase;
-              line-height: 22px;
+              line-height: 26px;
+              font-weight: 700;
             }
 
             .dropdown {
@@ -684,6 +693,7 @@ header {
                 padding-bottom: 20px;
               }
             }
+            
             .dropdown.show {
               border-bottom: none !important;
             }
@@ -867,7 +877,7 @@ header {
           .name {
             color: var(--color-orange);
             text-decoration: underline;
-            line-height: 140%;
+            line-height: 22px;
             cursor: pointer;
           }
         }

@@ -56,6 +56,11 @@ header {
       cursor: pointer; }
       .index-page .first .container .bottom .body-3-sarala {
         font-weight: 700; }
+      .index-page .first .container .bottom button {
+        color: rgba(234, 140, 0, 0.1);
+        transition: 0.35s; }
+        .index-page .first .container .bottom button:hover {
+          color: rgba(234, 140, 0, 0.3); }
   @media screen and (max-width: 1536px) {
     .index-page .first .container {
       text-align: center; }
@@ -236,7 +241,7 @@ header {
     z-index: 8; }
     .index-page .third .container .mini-title {
       position: absolute;
-      top: 150px;
+      top: 0;
       left: 0;
       right: 0;
       width: fit-content;
@@ -265,7 +270,6 @@ header {
         transition: 0.35s; }
         .index-page .third .container .tabs .tab:hover {
           background: rgba(234, 140, 0, 0.1);
-          font-weight: 700;
           color: var(--color-orange); }
       .index-page .third .container .tabs .tab-active {
         background: rgba(234, 140, 0, 0.1);
@@ -428,7 +432,7 @@ header {
         line-height: 100%; }
         .index-page .fourth .container .left .title .bottom {
           display: flex;
-          gap: 20px;
+          gap: 50px;
           align-items: end;
           cursor: pointer; }
           .index-page .fourth .container .left .title .bottom .hidden {
@@ -438,7 +442,8 @@ header {
             line-height: 26px;
             text-decoration-line: underline;
             text-transform: uppercase;
-            line-height: 22px; }
+            line-height: 26px;
+            font-weight: 700; }
           .index-page .fourth .container .left .title .bottom .dropdown .select input {
             font-size: 12px; }
           .index-page .fourth .container .left .title .bottom .dropdown .options {
@@ -559,7 +564,7 @@ header {
         .index-page .fifth .list .item .top .name {
           color: var(--color-orange);
           text-decoration: underline;
-          line-height: 140%;
+          line-height: 22px;
           cursor: pointer; }
       .index-page .fifth .list .item .text {
         color: #8C877B; }

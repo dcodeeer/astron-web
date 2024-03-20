@@ -148,10 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // animation
-  gsap.registerPlugin(ScrollTrigger)
-  gsap.registerPlugin(ScrollToPlugin)
-
-  //
 
   document.getElementById('go-to-bottom').addEventListener('click', (e) => {
     gsap.to(window, {

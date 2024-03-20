@@ -610,6 +610,11 @@ footer {
           height: 100px;
           border-radius: 8px;
           background-color: #EA8C001A;
+          transition: 0.35s;
+
+          &:hover {
+            background-color: rgba(234, 140, 0, 0.4);
+          }
         }
       }
     }
@@ -652,8 +657,10 @@ footer {
         a {
           color: #D8CDBB;
           transition: 0.35s;
+
           &:hover {
             opacity: 1;
+            color: var(--color-orange);
           }
         }
       }
