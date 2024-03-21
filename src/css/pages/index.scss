@@ -153,7 +153,7 @@ header {
 
     .left-smoke {
       top: 30%;
-      left: -112px;
+      left: -5px;
       position: absolute;
       z-index: 5;
       pointer-events: none;
@@ -161,17 +161,15 @@ header {
     .right-smoke {
       width: 45%;
       top: 160px;
-      right: -100px;
+      right: -5px;
       position: absolute;
       z-index: 5;
       pointer-events: none;
     }
     .left-brick {
-      min-width: 250px;
-      width: 28%;
-      left: -13%;
-      bottom: -25%;
-      transform: rotate(-24deg);
+      left: -5px;
+      width: 22%;
+      bottom: -35%;
       position: absolute;
       z-index: 3;
       pointer-events: none;
@@ -179,11 +177,8 @@ header {
     .right-brick {
       min-width: 250px;
       width: 25%;
-      right: -12%;
+      right: -5px;
       bottom: -45%;
-      transform: rotate(13deg);
-      transform: scale(1.3);
-      filter: blur(20px);
       position: absolute;
       z-index: 3;
       pointer-events: none;
@@ -406,12 +401,15 @@ header {
         overflow: hidden;
         position: relative;
         padding-right: 150px;
+        padding-top: 15px;
+        padding-bottom: 15px;
 
         .tab {
           width: auto;
           border-radius: 60px;
           padding: 12px 25px;
           color: #8C877B;
+          cursor: pointer;
           transition: 0.35s;
 
           &:hover {
@@ -437,6 +435,7 @@ header {
           color: #fff;
           position: absolute;
           right: 0;
+          padding-right: 15px;
 
           .btn {
             background-color: #2E2C29;
@@ -454,6 +453,11 @@ header {
             background-color: var(--color-orange);
             color: #fff;
             opacity: 1;
+            transition: 0.35s;
+
+            &:hover {
+              box-shadow: 0px 0px 15px 2px rgba(234, 140, 0, 0.70);
+            }
           }
         }
       }
@@ -821,17 +825,19 @@ header {
   }
 
   .fifth {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
     position: relative;
     z-index: 1;
 
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
     .fifth-right-smoke {
-      width: 250%;
-      margin-right: -79%;
+      right: -5px;
+      bottom: 20%;
       position: absolute;
-      transform: rotate(-30deg);
       z-index: 5;
       pointer-events: none;
     }
@@ -991,31 +997,27 @@ header {
     position: relative;
 
     .sixth-right-brick {
-      right: 0;
+      width: 15%;
+      right: -5px;
       top: -25px;
-      margin-right: -8%;
       position: absolute;
       z-index: 5;
       pointer-events: none;
     }
 
     .sixth-right-smoke {
-      opacity: 0.3;
-      margin-right: -40%;
-      right: 0;
-      top: 0;
+      width: 50%;
+      right: -5px;
+      top: -30%;
       position: absolute;
-      transform: rotate(-49deg);
-      z-index: 5;
+      z-index: 6;
       pointer-events: none;
     }
 
 
     .sixth-left-brick {
-      width: 65%;
-      transform: rotate(-24deg);
-      filter: blur(15px);
-      left: -50%;
+      width: 28%;
+      left: -5px;
       bottom: -17%;
       position: absolute;
       z-index: 5;
@@ -1023,21 +1025,18 @@ header {
     }
 
     .sixth-left-smoke {
-      transform: scale(2.2) rotate(150deg);
-      left: -45%;
-      top: -60%;
+      width: 100%;
+      left: -5px;
+      top: -130%;
       position: absolute;
       z-index: 5;
       pointer-events: none;
-      opacity: 0.5;
-      filter: blur(12px); 
     }
 
     .container {
       display: grid;
       grid-template-columns: minmax(500px, 887px) 1fr;
       gap: 80px;
-      z-index: 10;
       position: relative;
 
       .date {
@@ -1189,16 +1188,18 @@ header {
   background-color: rgba(0,0,0,0.75);
   position: fixed;
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
+  height: auto;
   z-index: 9999;
   display: none;
   align-items: center;
+  overflow: auto;
 
   .modal {
     background-color: var(--color-black);
-    width: 90%;
+    max-width: 95%;
+    height: min-content;
     margin: 0 auto;
     border: 1px solid rgba(234, 140, 0, 0.40);
 
@@ -1252,7 +1253,7 @@ header {
 
       #modal-slider {
         width: 100%;
-        height: 800px;
+        height: 100%;
         overflow: hidden;
         position: relative;
         .swiper-wrapper {

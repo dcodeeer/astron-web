@@ -283,23 +283,57 @@ document.addEventListener('DOMContentLoaded', function () {
       ease: "Power1.easeInOut"
     });
   });
-  ScrollTrigger.create({
-    trigger: ".left-brick",
-    start: "-100px top",
-    end: "bottom 300px",
-    pin: ".left-brick"
+
+  // paralax start
+
+  // paralax end
+
+  // ScrollTrigger.create({
+  //   trigger: ".left-brick",
+  //   start: "-100px top", 
+  //   end: "bottom 300px",
+  //   pin: ".left-brick"
+  // });
+
+  gsap.to('.left-brick', {
+    yPercent: 30,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: ".left-brick",
+      start: "-100px top",
+      end: "bottom 300px",
+      scrub: true
+    }
   });
-  ScrollTrigger.create({
-    trigger: ".right-brick",
-    start: "-100px top",
-    end: "bottom 300px",
-    pin: ".right-brick"
+  gsap.to('.right-brick', {
+    yPercent: 40,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: ".right-brick",
+      start: "-100px top",
+      end: "bottom 300px",
+      scrub: true
+    }
   });
-  ScrollTrigger.create({
-    trigger: ".sixth-right-brick",
-    start: "-200px top",
-    end: "bottom 300px",
-    pin: ".sixth-right-brick"
+  gsap.to('.sixth-right-brick', {
+    yPercent: 40,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: ".sixth-right-brick",
+      start: "-400px top",
+      end: "bottom 300px",
+      scrub: true
+    }
+  });
+  gsap.to('.sixth-left-brick', {
+    yPercent: 20,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: ".sixth-left-brick",
+      start: "-400px top",
+      end: "bottom 300px",
+      scrub: true
+    }
   });
 
   // gsap.fromTo(
@@ -567,7 +601,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42033" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39505" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
