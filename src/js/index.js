@@ -2,14 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.pdf-modal');
 
   const closeModal = (e) => {
+    console.log(e.target)
     modal.classList.remove('show');
     modal.removeEventListener('click', closeModal);
     document.querySelector('body').style.overflowY = 'visible';
   };
 
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+
   const openModal = (path) => {
+    var canvas = document.getElementById('pdf-embed');
+
+    pdfjsLib.getDocument(path).promise.then(function(pdf) {
+      pdf.getPage(1).then(function(page) {
+        var viewport = page.getViewport({ scale: 1.0 });
+        var context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        page.render({ canvasContext: context, viewport: viewport });
+      });
+    });
+    
     modal.classList.add('show');
-    modal.querySelector('embed').src = path;
 
     document.querySelector('body').style.overflowY = 'hidden';
     modal.addEventListener('click', closeModal);
@@ -362,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { y: 100, opacity: 0 },
     { y: 0, opacity: 1, delay: 0.5, scrollTrigger: sixth.trigger },
   );
-  
   
 
 });

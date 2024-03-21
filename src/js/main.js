@@ -21,6 +21,30 @@ gsap.fromTo(
   { y: 0, opacity: 1, delay: 1, scrollTrigger: contactBox.trigger },
 );
 
+gsap.fromTo(
+  'footer .top .first .box',
+  { y: 100, opacity: 0 },
+  { y: 0, opacity: 1, delay: 1.3, scrollTrigger: contactBox.trigger },
+);
+
+gsap.fromTo(
+  'footer .top .second .title',
+  { y: 100, opacity: 0 },
+  { y: 0, opacity: 1, delay: 1.3, scrollTrigger: contactBox.trigger },
+);
+
+gsap.fromTo(
+  'footer .top .second .socials',
+  { y: 100, opacity: 0 },
+  { y: 0, opacity: 1, delay: 1.3, scrollTrigger: contactBox.trigger },
+);
+
+gsap.fromTo(
+  'footer .top .third .box',
+  { y: 100, opacity: 0 },
+  { y: 0, opacity: 1, delay: 1.3, scrollTrigger: contactBox.trigger },
+);
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

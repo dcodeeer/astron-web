@@ -392,21 +392,24 @@ header {
       margin-bottom: 15px; }
     .index-page .third .container .title {
       font-size: 48px; }
-    .index-page .third .slider-container .swiper-wrapper .swiper-slide {
-      width: 60%; } }
+    .index-page .third .slider-container .swiper-wrapper {
+      padding-left: 0; }
+      .index-page .third .slider-container .swiper-wrapper .swiper-slide {
+        width: 60%; } }
   @media screen and (max-width: 712px) {
     .index-page .third .container .title {
       font-size: 36px; }
     .index-page .third .container .tabs .swiper-wrapper .swiper-slide {
       font-size: 16px; }
-    .index-page .third .slider-container {
-      grid-template-columns: repeat(1, 100%); }
-      .index-page .third .slider-container .swiper-wrapper .swiper-slide {
-        height: 500px; }
-        .index-page .third .slider-container .swiper-wrapper .swiper-slide .info {
-          padding: 15px; }
-          .index-page .third .slider-container .swiper-wrapper .swiper-slide .info .left .H1 {
-            font-size: 20px; } }
+    .index-page .third .slider-container .swiper-wrapper .swiper-slide {
+      height: 500px; }
+      .index-page .third .slider-container .swiper-wrapper .swiper-slide .info {
+        padding: 15px; }
+        .index-page .third .slider-container .swiper-wrapper .swiper-slide .info .left .H1 {
+          font-size: 20px; } }
+  @media screen and (max-width: 480px) {
+    .index-page .third .slider-container .swiper-wrapper .swiper-slide {
+      width: 100%; } }
 
 .index-page .fourth {
   margin-bottom: 10px;
@@ -919,9 +922,16 @@ header {
     align-items: center;
     justify-content: center;
     height: 100%; }
-    .pdf-modal .modal embed {
-      width: 70%;
-      height: 80%; }
+    .pdf-modal .modal #pdf-embed {
+      background-color: var(--color-black);
+      border: 2px solid var(--color-orange);
+      height: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px; }
+      .pdf-modal .modal #pdf-embed a {
+        color: var(--color-orange); }
 
 .pdf-modal.show {
   display: block; }
