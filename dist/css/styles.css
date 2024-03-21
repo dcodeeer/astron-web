@@ -589,7 +589,7 @@ footer {
   width: 1px !important;
   overflow: hidden; }
 
-*::-webkit-scrollbar-thumb {
+.dropdown .options::-webkit-scrollbar-thumb {
   background-color: var(--color-orange) !important;
   border-radius: 8px; }
 

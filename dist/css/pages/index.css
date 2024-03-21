@@ -422,8 +422,7 @@ header {
       padding-left: calc(var(--padding-calc) - 5px);
       margin-right: -80px;
       display: flex;
-      align-items: center;
-      z-index: 2; }
+      align-items: center; }
       .index-page .fourth .container .left .title {
         font-family: "Sarala", sans-serif;
         font-size: 140px;
@@ -458,7 +457,7 @@ header {
       padding: 120px 0;
       margin-right: calc(var(--margin-calc) + 5px);
       padding-right: calc(var(--padding-calc) - 5px);
-      z-index: 1; }
+      z-index: 2; }
       .index-page .fourth .container .right .box {
         max-width: 290px;
         margin-left: auto; }
@@ -494,13 +493,15 @@ header {
         width: 100%;
         border-radius: 40px;
         margin: 0 auto;
-        padding: 50px; }
+        padding: 50px;
+        z-index: 2; }
         .index-page .fourth .container .left .title {
           font-size: 42px; }
       .index-page .fourth .container .right {
         border-radius: 40px;
         margin-right: 0;
-        padding-right: 0; }
+        padding-right: 0;
+        z-index: 1; }
         .index-page .fourth .container .right .box {
           padding: 0 15px;
           margin: auto; }
