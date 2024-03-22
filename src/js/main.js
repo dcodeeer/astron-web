@@ -1,6 +1,39 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
+gsap.to('.left-bottom-img', {
+  yPercent: 30,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: ".left-bottom-img",
+    start: "-300px top", 
+    end: "bottom 300px",
+    scrub: true
+  }
+});
+
+gsap.to('.right-top-img', {
+  yPercent: 20,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: ".right-top-img",
+    start: "-100px top", 
+    end: "bottom 300px",
+    scrub: true
+  }
+});
+
+gsap.to('.right-bottom-img', {
+  yPercent: 10,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: ".right-top-img",
+    start: "-100px top", 
+    end: "bottom 300px",
+    scrub: true
+  }
+});
+
 const contactBox = {};
 contactBox.trigger = {
   trigger: '.contact-us-box',

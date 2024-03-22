@@ -70,20 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const modalSlider = new Swiper('#modal-slider', {
     init: false,
-    slidesPerView: "auto",
+    effect: 'fade',
     navigation: {
       prevEl: '#modal-prev',
       nextEl: '#modal-next'
     },
-
-    breakpoints: {
-      1249: {
-        spaceBetween: 15,
-      },
-      1250: {
-        spaceBetween: 64,
-      },
-    }
   });
 
   // tab
@@ -166,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('go-to-bottom').addEventListener('click', (e) => {
     gsap.to(window, {
       duration: 1,
-      scrollTo: '#index-fifth',
+      scrollTo: '#index-fourth',
       ease: "Power1.easeInOut"
     });
   });

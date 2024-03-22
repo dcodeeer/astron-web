@@ -306,7 +306,8 @@ header {
     gap: 4px;
     position: relative;
     z-index: 8;
-    overflow: hidden; }
+    overflow: hidden;
+    padding-left: 75px; }
     .index-page .third .slider-container .btn {
       width: 150px;
       cursor: pointer;
@@ -322,19 +323,26 @@ header {
       color: #fff; }
     .index-page .third .slider-container .prev {
       border-radius: 0px 60px 60px 0px;
-      background: #2E2C29; }
+      background: #2E2C29;
+      margin-left: -75px; }
     .index-page .third .slider-container .next {
       border-radius: 60px 0 0 60px;
       margin-right: -5px;
       background: #2E2C29;
       right: 0; }
     .index-page .third .slider-container .swiper-wrapper {
-      padding-left: 75px; }
+      padding: 20px 0; }
     .index-page .third .slider-container .swiper-slide {
       width: 40%;
       display: grid;
       grid-template-rows: 4fr 1fr;
-      height: 800px; }
+      height: 800px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: 0.35s; }
+      .index-page .third .slider-container .swiper-slide:hover {
+        border: 1px solid var(--color-orange);
+        box-shadow: 0px 0px 15px 2px rgba(234, 140, 0, 0.7); }
       .index-page .third .slider-container .swiper-slide .image {
         position: relative;
         overflow: hidden; }
@@ -394,7 +402,7 @@ header {
       margin-bottom: 15px; }
     .index-page .third .container .title {
       font-size: 48px; }
-    .index-page .third .slider-container .swiper-wrapper {
+    .index-page .third .slider-container {
       padding-left: 0; }
       .index-page .third .slider-container .swiper-wrapper .swiper-slide {
         width: 60%; } }
@@ -519,7 +527,8 @@ header {
 
 .index-page .fifth {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  margin-bottom: 5px; }
   .index-page .fifth .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -602,28 +611,28 @@ header {
       padding-right: calc(var(--padding-calc) - 8px);
       padding-left: 8%; }
   @media screen and (max-width: 1120px) {
-    .index-page .fifth {
+    .index-page .fifth .container {
       grid-template-columns: 1fr; }
-      .index-page .fifth .left {
-        margin: 0 -20px;
-        padding: 0;
-        border-right: none; }
-        .index-page .fifth .left .title {
-          margin: 0;
-          padding: 30px 15px; }
-        .index-page .fifth .left .list .item {
-          margin: 0;
-          padding: 30px 15px; }
-      .index-page .fifth .right {
-        padding: 0;
-        margin: 0 -20px;
-        border-left: none; }
-        .index-page .fifth .right .title {
-          margin: 0;
-          padding: 30px 15px; }
-        .index-page .fifth .right .list .item {
-          margin: 0;
-          padding: 30px 15px; } }
+    .index-page .fifth .left {
+      margin: 0 -20px;
+      padding: 0;
+      border-right: none; }
+      .index-page .fifth .left .title {
+        margin: 0;
+        padding: 30px 15px; }
+      .index-page .fifth .left .list .item {
+        margin: 0;
+        padding: 30px 15px; }
+    .index-page .fifth .right {
+      padding: 0;
+      margin: 0 -20px;
+      border-left: none; }
+      .index-page .fifth .right .title {
+        margin: 0;
+        padding: 30px 15px; }
+      .index-page .fifth .right .list .item {
+        margin: 0;
+        padding: 30px 15px; } }
 
 .index-page .sixth {
   background-color: var(--color-black);
@@ -757,8 +766,10 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   height: auto;
   z-index: 9999;
+  padding: 50px;
   display: none;
   align-items: center;
   overflow: auto; }
@@ -767,7 +778,7 @@ header {
     max-width: 95%;
     height: min-content;
     margin: 0 auto;
-    border: 1px solid rgba(234, 140, 0, 0.4);
+    border: 1px solid rgba(206, 199, 190, 0.4);
     display: grid;
     grid-template-columns: 45fr 55fr;
     gap: 62px;
@@ -788,7 +799,21 @@ header {
       justify-content: center;
       z-index: 99; }
     .modal-box .modal .slider-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       position: relative; }
+      .modal-box .modal .slider-wrapper .slider-right {
+        width: 100%;
+        height: 100%;
+        margin: auto 0;
+        right: 0;
+        margin-right: -15px;
+        position: absolute; }
+        .modal-box .modal .slider-wrapper .slider-right img {
+          width: 100%;
+          height: 100%;
+          position: absolute; }
       .modal-box .modal .slider-wrapper .btns {
         display: flex;
         gap: 4px;
@@ -808,16 +833,17 @@ header {
           color: #fff;
           opacity: 1; }
       .modal-box .modal .slider-wrapper #modal-slider {
-        width: 100%;
-        height: 100%;
         overflow: hidden;
-        position: relative; }
+        position: relative;
+        width: 100%;
+        height: 100%; }
         .modal-box .modal .slider-wrapper #modal-slider .swiper-wrapper {
+          width: 100%;
           height: 100%; }
           .modal-box .modal .slider-wrapper #modal-slider .swiper-wrapper .swiper-slide img {
-            display: block;
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover; }
     .modal-box .modal .content {
       max-width: 800px;
