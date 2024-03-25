@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-   const modalSlider = new Swiper('#modal-slider', {
+  const modalSlider = new Swiper('#modal-slider', {
     init: false,
     effect: 'fade',
     navigation: {
@@ -78,6 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // tab
+
+  modalSlider.on('slideChange', (swiper) => {
+    const slider = document.querySelector('.slider-right');
+    const slides = slider.querySelectorAll('img');
+    if (swiper.realIndex < swiper.previousIndex) {
+      slider.insertBefore(slides[slides.length - 1], slider.firstChild);
+      return;
+    }
+    slider.appendChild(slides[0]);
+  });
 
   const slides = document.querySelector('.tab-slides[data-id="1"]');
   document.querySelector('#modal-slider .swiper-wrapper').innerHTML = slides.innerHTML;
@@ -113,12 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalOpenListener = () => {
     const body = document.querySelector('body');
 
-    const modal = document.querySelector('.modal-box');
-    modal.classList.add('modal-box-opened');
+    const modal = document.querySelector('.modal');
+    modal.classList.add('opened');
     body.style.overflowY = 'hidden';
 
     document.getElementById('close-modal').addEventListener('click', () => {
-      modal.classList.remove('modal-box-opened')
+      modal.classList.remove('opened')
       body.style.overflowY = 'visible';
     });
   };
