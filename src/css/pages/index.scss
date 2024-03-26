@@ -610,6 +610,9 @@ header {
       }
       .slider-container {
         padding-left: 0;
+        .prev {
+          margin-left: 0;
+        }
         .swiper-wrapper {
           
           .swiper-slide {
@@ -1447,7 +1450,12 @@ header {
           }
         }
         .middle {
-          
+          .tabs {
+            button {
+              padding: 14px 21px;
+              font-size: 14px;
+            }
+          }
         }
       }
     }

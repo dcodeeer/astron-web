@@ -404,6 +404,8 @@ header {
       font-size: 48px; }
     .index-page .third .slider-container {
       padding-left: 0; }
+      .index-page .third .slider-container .prev {
+        margin-left: 0; }
       .index-page .third .slider-container .swiper-wrapper .swiper-slide {
         width: 60%; } }
   @media screen and (max-width: 712px) {
@@ -939,7 +941,10 @@ header {
           justify-content: space-between; }
   @media screen and (max-width: 1536px) {
     .modal .content .right .top .H0 {
-      font-size: 32px; } }
+      font-size: 32px; }
+    .modal .content .right .middle .tabs button {
+      padding: 14px 21px;
+      font-size: 14px; } }
   @media screen and (max-width: 1280px) {
     .modal {
       align-items: normal;
