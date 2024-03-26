@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalSlider = new Swiper('#modal-slider', {
     init: false,
     effect: 'fade',
+    observer: true,
+    observeParents: true,
     navigation: {
       prevEl: '#modal-prev',
       nextEl: '#modal-next'
@@ -88,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     slider.appendChild(slides[0]);
   });
+  
 
   const slides = document.querySelector('.tab-slides[data-id="1"]');
   document.querySelector('#modal-slider .swiper-wrapper').innerHTML = slides.innerHTML;
@@ -100,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = e.currentTarget.getAttribute('data-id');
 
     const slides = document.querySelector(".tab-slides[data-id='"+ id +"']");
-    console.log(slides);
     document.querySelector('#modal-slider .swiper-wrapper').innerHTML = slides.innerHTML;
     modalSlider.update();
 
@@ -109,6 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentVisible = document.querySelector(".tab-content.visible");
     currentVisible.classList.remove('visible');
     content.classList.add('visible');
+    
+    const images = slides.querySelectorAll('img');
+    const sliderRight = document.querySelector('.slider-right');
+
+    sliderRight.innerHTML = '';
+
+    images.forEach((img) => {
+      sliderRight.appendChild(img.cloneNode());
+    });
   };
 
 

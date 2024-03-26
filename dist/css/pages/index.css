@@ -458,9 +458,38 @@ header {
             font-weight: 700; }
           .index-page .fourth .container .left .title .bottom .dropdown .select input {
             font-size: 12px; }
-          .index-page .fourth .container .left .title .bottom .dropdown .options {
-            max-height: 250px;
-            padding-bottom: 20px; }
+          .index-page .fourth .container .left .title .bottom .dropdown .option-box {
+            background: var(--color-black);
+            position: absolute;
+            height: max-content;
+            padding: 20px 10px;
+            border: 1px solid var(--color-orange);
+            border-top: none;
+            border-radius: 0 0 25px 25px;
+            left: -1px;
+            width: calc(100% + 2px); }
+            .index-page .fourth .container .left .title .bottom .dropdown .option-box .options {
+              width: 100%;
+              position: static;
+              border: none;
+              overflow-y: scroll;
+              box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 1.22393px 11.42331px 0px rgba(0, 0, 0, 0.05), 0px 5.30368px 21.21471px 0px rgba(0, 0, 0, 0.04), 0px 11.83128px 29.37422px 0px rgba(0, 0, 0, 0.03), 0px 21.21471px 34.26992px 0px rgba(0, 0, 0, 0.01), 0px 33.65796px 37.53373px 0px rgba(0, 0, 0, 0);
+              z-index: 1; }
+              .index-page .fourth .container .left .title .bottom .dropdown .option-box .options .option {
+                padding: 10px 10px 10px 5px; }
+            .index-page .fourth .container .left .title .bottom .dropdown .option-box .options::-webkit-scrollbar {
+              background-color: var(--color-black) !important;
+              width: 1px !important;
+              overflow: hidden; }
+            .index-page .fourth .container .left .title .bottom .dropdown .option-box .options::-webkit-scrollbar-thumb {
+              background-color: var(--color-orange) !important;
+              border-radius: 8px; }
+            .index-page .fourth .container .left .title .bottom .dropdown .option-box .options::-webkit-scrollbar-track-piece {
+              background-color: #563B12; }
+          .index-page .fourth .container .left .title .bottom .dropdown.show .options {
+            border-top: none;
+            border-radius: 0 0 25px 25px;
+            max-height: 250px; }
           .index-page .fourth .container .left .title .bottom .dropdown.show {
             border-bottom: none !important; }
     .index-page .fourth .container .right {
@@ -778,7 +807,7 @@ header {
     margin: 0 auto;
     position: relative;
     display: grid;
-    grid-template-columns: minmax(400px, 700px) 1fr;
+    grid-template-columns: minmax(350px, 650px) 1fr;
     grid-template-rows: 100%;
     gap: 150px; }
     .modal .content .close {
@@ -790,13 +819,13 @@ header {
       box-shadow: 0px 0px 84px 2px rgba(234, 140, 0, 0.7);
       position: absolute;
       top: 18px;
-      right: 16px; }
+      right: 16px;
+      z-index: 99; }
       .modal .content .close svg {
         margin: auto; }
     .modal .content .tab-slides {
       display: none; }
     .modal .content .left {
-      grid-column: 1 / span 1;
       width: 100%;
       height: 100%;
       position: relative; }
@@ -810,19 +839,21 @@ header {
         position: absolute;
         z-index: 2; }
         .modal .content .left .slider-right img {
+          display: none;
           width: 100%;
           position: absolute; }
           .modal .content .left .slider-right img:first-child {
+            display: block;
             padding-right: 30px;
             height: calc(100% - 80px);
             z-index: 2;
             filter: brightness(50%) grayscale(0%); }
           .modal .content .left .slider-right img:nth-child(2) {
+            display: block;
             height: calc(100% - 160px);
             filter: brightness(25%) grayscale(0%);
             z-index: 1; }
       .modal .content .left .slider-wrapper {
-        max-width: 630px;
         width: 100%;
         height: 100%;
         z-index: 3; }
@@ -832,13 +863,10 @@ header {
           overflow: hidden;
           position: relative;
           z-index: 3; }
-          .modal .content .left .slider-wrapper #modal-slider .swiper-wrapper .swiper-slide {
+          .modal .content .left .slider-wrapper #modal-slider .swiper-wrapper .swiper-slide img {
             width: 100%;
-            height: 100%; }
-            .modal .content .left .slider-wrapper #modal-slider .swiper-wrapper .swiper-slide img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover; }
+            height: 100%;
+            object-fit: cover; }
       .modal .content .left .btns {
         display: flex;
         gap: 4px;
@@ -878,7 +906,6 @@ header {
         justify-content: space-between; }
         .modal .content .right .middle .tabs {
           display: flex;
-          flex-wrap: wrap;
           border-radius: 98px;
           border: 1px solid rgba(234, 140, 0, 0.1);
           padding: 4px; }
@@ -910,9 +937,62 @@ header {
           display: flex;
           align-items: center;
           justify-content: space-between; }
+  @media screen and (max-width: 1536px) {
+    .modal .content .right .top .H0 {
+      font-size: 32px; } }
+  @media screen and (max-width: 1280px) {
+    .modal {
+      align-items: normal;
+      overflow-y: auto;
+      padding: 20px; }
+      .modal .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 0;
+        height: min-content; }
+        .modal .content .left {
+          overflow: hidden;
+          height: 400px; }
+          .modal .content .left .btns {
+            right: 15px; }
+            .modal .content .left .btns button {
+              padding: 15px 30px; }
+        .modal .content .right {
+          max-width: none;
+          padding: 15px;
+          gap: 20px; }
+          .modal .content .right .top .H0 {
+            font-size: 24px; }
+          .modal .content .right .bottom {
+            padding-right: 0; }
+            .modal .content .right .bottom .tab-content .row {
+              gap: 10px; } }
+  @media screen and (max-width: 712px) {
+    .modal {
+      padding: 10px; }
+      .modal .content {
+        width: 100%; }
+        .modal .content .left {
+          height: 300px; }
+        .modal .content .right .top img {
+          width: 70px;
+          height: auto; }
+        .modal .content .right .top .H0 {
+          font-size: 18px; }
+        .modal .content .right .middle {
+          flex-direction: column; }
+          .modal .content .right .middle .tabs {
+            width: 100%;
+            flex-direction: column;
+            border: none; }
+            .modal .content .right .middle .tabs button {
+              font-size: 14px; } }
 
 .modal.opened {
   display: flex; }
+  @media screen and (max-width: 1280px) {
+    .modal.opened {
+      display: block; } }
 
 .pdf-modal {
   background-color: rgba(0, 0, 0, 0.5);
