@@ -1,22 +1,11 @@
 const dropdownListener = (e) => {
+  console.log('opened');
   const dropdown = e.currentTarget;
 
   const closeEvent = () => {
     const event = new Event('close');
     dropdown.dispatchEvent(event);
   };
-
-  const dropdownCloseListener = (e) => {
-    const isClickInsideElement = dropdown.contains(e.target);
-    if (!isClickInsideElement) {
-      dropdown.classList.remove('show');
-      closeEvent();
-      document.removeEventListener('click',dropdownCloseListener)
-      return false;
-    }
-  }
-
-  document.addEventListener('click', dropdownCloseListener);
 
   if (e.target.classList.contains('option')) {
     dropdown.querySelector('.select input').value = e.target.innerText;
@@ -40,3 +29,16 @@ const dropdownListener = (e) => {
 
 const dropdowns = document.querySelectorAll('.dropdown');
 dropdowns.forEach((dropdown) => dropdown.addEventListener('click', dropdownListener));
+
+const dropdownCloseListener = (e) => {
+  dropdowns.forEach((dropdown) => {
+    const isClickInsideElement = dropdown.contains(e.target);
+    if (!isClickInsideElement) {
+      dropdown.classList.remove('show');
+      const event = new Event('close');
+      dropdown.dispatchEvent(event);
+    }
+  });
+}
+
+document.addEventListener('click', dropdownCloseListener);

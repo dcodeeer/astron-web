@@ -150,9 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openDropdownButton = document.querySelector('.open-dropdown');
   const openDropdownListener = (e) => {
-    console.log('opend')
     const target = e.currentTarget;
     const dropdown = e.currentTarget.parentNode.querySelector('.dropdown');
+
+    e.stopImmediatePropagation();
+    dropdown.dispatchEvent(new Event('click'));
+    
     dropdown.classList.remove('hidden');
     dropdown.classList.add('show');
 
