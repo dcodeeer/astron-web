@@ -1,5 +1,4 @@
 const dropdownListener = (e) => {
-  console.log('opened');
   const dropdown = e.currentTarget;
 
   const closeEvent = () => {
@@ -8,6 +7,16 @@ const dropdownListener = (e) => {
   };
 
   if (e.target.classList.contains('option')) {
+    const selected = dropdown.querySelector('.selected');
+    if (selected) {
+      selected.classList.remove('selected'); 
+    }    
+
+    const option = e.target;
+    if (option) {
+      option.classList.add('selected');  
+    }
+
     dropdown.querySelector('.select input').value = e.target.innerText;
     dropdown.querySelector('.hidden').setAttribute('data-name', e.target.getAttribute('data-name'));
     dropdown.querySelector('.hidden').value = e.target.getAttribute('data-value');

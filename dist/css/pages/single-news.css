@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-bottom: 64px; }
+  margin-bottom: 64px;
+  color: #8C877B; }
   .wrapper .container content .info .time {
     display: flex;
     align-items: center;
@@ -36,8 +37,11 @@
     gap: 32px;
     align-items: flex-start;
     max-width: 300px; }
+    .wrapper .container aside .box .button-3 {
+      padding: 19px 32px;
+      line-height: 16px; }
     .wrapper .container aside .box .row .date {
-      color: var(--dark-text);
+      color: #8C877B;
       margin-bottom: 16px; }
     .wrapper .container aside .box .row .body-1 {
       text-decoration: underline;

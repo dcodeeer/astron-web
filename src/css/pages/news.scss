@@ -1,6 +1,7 @@
 .wrapper {
   .container {
     content {
+      padding-right: 0;
       .articles {
         .article {
           display: flex;
@@ -42,7 +43,6 @@
             }
 
             .H1 {
-              text-decoration: underline;
               color: var(--color-white);
               transition: 0.35s;
             }
@@ -90,23 +90,26 @@
             gap: 4px;
   
             .prev, .next {
-              padding: 45px 60px;
+              padding: 41px 58px;
             }
           }
         }
 
         .form-box {
           padding-right: calc((( 100vw - var(--container-width) ) / 2) - 12px);
+
           form {
             width: 290px;
             display: flex;
             flex-direction: column;
+            align-items: start;
 
             .H1 {
               margin-bottom: 32px;
             }
 
             input {
+              width: 100%;
               border-radius: 58px;
               border: 1px solid #563B12;
               padding: 24px 32px;
@@ -114,12 +117,14 @@
               margin-bottom: 4px;
 
               &::placeholder {
-                color: #563B12;
+                color: #EA8C00;
               }
             }
 
             button {
               margin-top: 12px;
+              padding: 19px 32px;
+              line-height: 16px;
             }
           }
         }

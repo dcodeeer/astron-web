@@ -1,6 +1,8 @@
 .wrapper {
   .container {
     content {
+      max-height: 1500px;
+      overflow-y: auto;
       .H0 {
         margin-bottom: 64px;
       }
@@ -30,7 +32,9 @@
         .item {
           position: relative;
           padding: 40px 64px;
-          border: 1px solid rgba(234, 140, 0, 0.10);
+          border: 1px solid transparent;
+          background:  linear-gradient(var(--color-black) 0 0) padding-box, 
+          linear-gradient(to right, rgb(86, 59, 18), #2E200B00) border-box;
           border-radius: 40px;
 
           // &::before {
@@ -51,6 +55,7 @@
             align-items: center;
             gap: 8px;
             margin: 8px 0 20px 0;
+            color: #8C877B;
             .dot {
               background-color: var(--color-orange);
               width: 3px;
@@ -87,7 +92,7 @@
             input {
               font-weight: 400;
               &::placeholder {
-                color: #563B12;
+                color: #EA8C00;
               }
             }
           }
@@ -101,7 +106,7 @@
           color: var(--color-orange);
 
           &::placeholder {
-            color: #563B12;
+            color: #EA8C00;
           }
         }
 

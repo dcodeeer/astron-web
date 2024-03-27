@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const slider = new Swiper('.slider-container', {
     init: false,
-    loop: true,
     speed: 500,
     autoplay: {
-        delay: 2000,
+      delay: 2000,
     },
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: 'auto',
+    slidesPerView: 2,
     coverflowEffect: {
       rotate: 0,
       stretch: 80,
