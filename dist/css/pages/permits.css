@@ -7,18 +7,20 @@
   position: relative;
   overflow: hidden; }
   .wrapper .container content .slider-container .swiper-wrapper .swiper-slide {
+    filter: brightness(50%) grayscale(0%);
     max-width: 400px; }
     .wrapper .container content .slider-container .swiper-wrapper .swiper-slide img {
       width: 100%;
       border-radius: 40px; }
+  .wrapper .container content .slider-container .swiper-wrapper .swiper-slide-active {
+    filter: none; }
 
 .wrapper .container content .modal {
   background-color: rgba(0, 0, 0, 0.7);
-  content: '';
   display: none;
+  align-items: center;
   justify-content: center;
   padding: 20px;
-  overflow: auto;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,6 +28,9 @@
   min-height: 100vh;
   height: 100%;
   z-index: 99; }
+  .wrapper .container content .modal img {
+    width: 100%;
+    height: auto; }
 
 .wrapper .container content .modal.show {
   display: flex; }

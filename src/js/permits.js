@@ -38,16 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // modal
 
+  const body = document.querySelector('body');
   const modal = document.querySelector('.modal');
 
   const closeModalListener = (e) => {
     modal.classList.remove('show');
+    body.style.overflowY = 'visible';
     modal.removeEventListener('click', closeModalListener);
   };
   const openModalListener = (e) => {
     modal.classList.add('show');
     const img = modal.querySelector('img');
     img.src = e.currentTarget.src;
+
+    body.style.overflowY = 'hidden';
 
     modal.addEventListener('click', closeModalListener)
   };
