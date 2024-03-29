@@ -181,11 +181,27 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('go-to-bottom').addEventListener('click', (e) => {
     gsap.to(window, {
       duration: 1,
-      scrollTo: '#index-fourth',
+      scrollTo: '',
+      scrollTo: { y: "#index-fourth", offsetY: 150 },
       ease: "Power1.easeInOut"
     });
   });
 
+  const navScrollToListener = (e) => {
+    if (e.currentTarget.tagName !== 'A') return;
+
+    e.preventDefault();
+    
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: '',
+      scrollTo: { y: e.currentTarget.getAttribute('href'), offsetY: 150 },
+      ease: "Power1.easeInOut"
+    });
+  };
+
+  const navLinks = document.querySelectorAll('.nav-scroll-link');
+  navLinks.forEach((navLink) => navLink.addEventListener('click', navScrollToListener));
 
   // paralax start
   

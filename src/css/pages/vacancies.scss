@@ -1,8 +1,31 @@
 .wrapper {
   .container {
     content {
-      max-height: 1500px;
-      overflow-y: auto;
+      padding-bottom: 40px;
+      position: relative;
+      &::after {
+        content: '';
+        background: linear-gradient(180deg, rgba(13, 13, 13, 0.00) 0%, #0D0D0D 100%);
+        display: block;
+        margin-bottom: 40px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+      }
+
+      &::-webkit-scrollbar {
+        background-color: var(--color-black) !important;
+        width: 0px !important;
+        overflow: hidden;
+      }
+      &::-webkit-scrollbar-thumb {
+        width: 0px;
+        background-color: var(--color-orange) !important;
+        border-radius: 8px;
+      }
+
       .H0 {
         margin-bottom: 64px;
       }
@@ -28,6 +51,19 @@
         display: flex;
         flex-direction: column;
         gap: 4px;
+        max-height: 1000px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          background-color: var(--color-black) !important;
+          width: 0px !important;
+          overflow: hidden;
+        }
+        &::-webkit-scrollbar-thumb {
+          width: 0px;
+          background-color: var(--color-orange) !important;
+          border-radius: 8px;
+        }
 
         .item {
           position: relative;
@@ -36,20 +72,7 @@
           background:  linear-gradient(var(--color-black) 0 0) padding-box, 
           linear-gradient(to right, rgb(86, 59, 18), #2E200B00) border-box;
           border-radius: 40px;
-
-          // &::before {
-          //   background: url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 877 253" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="876" height="252" rx="39.5" stroke="url(%23paint0_linear_519_20589)"/><defs><linearGradient id="paint0_linear_519_20589" x1="71.5918" y1="18.0714" x2="422.222" y2="435.903" gradientUnits="userSpaceOnUse"><stop stop-color="%23402C0E"/><stop offset="1" stop-color="%232E200B" stop-opacity="0"/></linearGradient></defs></svg>');
-          //   background-repeat: no-repeat;
-          //   background-size: cover 100%;
-          //   content: '';
-          //   display: block;
-          //   top: 0;
-          //   bottom: 0;
-          //   right: 0;
-          //   left: 0;
-          //   position: absolute;
-          // }
-
+          
           .info {
             display: flex;
             align-items: center;

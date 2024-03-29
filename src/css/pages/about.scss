@@ -13,6 +13,106 @@
         width: 100%;
         border-radius: 40px;
       }
+
+      .modal {
+        background-color: rgba(0, 0, 0, 0.7);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: fixed;
+        z-index: 999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        .close-modal {
+          border-radius: 60px;
+          background: var(--dark-text, #8C877B);
+          padding: 44px 62px;
+          position: absolute;
+          top: 32px;
+          left: -70px;
+          cursor: pointer;
+        }
+
+        .content {
+          border-radius: 32px;
+          border: 2px solid var(--active, #EA8C00);
+          background: #0D0D0D;
+          width: 50%;
+          height: 80%;
+          position: relative;
+          padding: 32px 32px 32px 150px;
+
+          .text {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 32px;
+
+            &::-webkit-scrollbar {
+              background-color: #563B12 !important;
+              width: 1px !important;
+              overflow: hidden;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: var(--color-orange) !important;
+              border-radius: 8px;
+            }
+
+            .logo {
+              width: 290px;
+              height: 160px;
+              flex: 0 0 auto; 
+              border-radius: 40px;
+              border: 2px solid #BDBDBD;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .title {
+              font-family: 'Sarala', sans-serif;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 160%;
+            }
+          }
+        }
+      }
+      .modal.show {
+        display: flex;
+      }
+
+      .slider-wrapper {
+        margin-right: -80px;
+
+        #slider {
+          width: 100%;
+          overflow: hidden;
+          padding-right: 15px;
+          
+          .swiper-wrapper {
+            .swiper-slide {
+              background: rgba(234, 140, 0, 0.20);
+              border-radius: 12px;
+              width: 30%;
+              height: 215px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
 
     aside {
@@ -50,12 +150,14 @@
             width: 290px;
             display: flex;
             flex-direction: column;
+            align-items: start;
 
             .H1 {
               margin-bottom: 32px;
             }
 
             input {
+              width: 100%;
               border-radius: 58px;
               border: 1px solid #563B12;
               padding: 24px 32px;
@@ -69,6 +171,8 @@
 
             button {
               margin-top: 12px;
+              padding: 19px 32px;
+              line-height: 16px;
             }
           }
         }
@@ -90,6 +194,10 @@
 
       content {
         padding: 30px 15px;
+
+        .slider-wrapper {
+          margin-right: 0;
+        }
       }
 
       aside {
@@ -107,11 +215,44 @@
       grid-template-columns: 1fr;
 
       content {
+        width: 100%;
+        overflow-x: hidden;
         gap: 32px;
         font-size: 16px;
 
+        .modal {
+          .close-modal {
+            left: 15px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .content {
+            padding-top: 100px;
+            padding-left: 32px;
+            width: 85%;
+
+            .text {
+              .logo {
+                width: 100%;
+              }
+            }
+          }
+        }
+
         .H0 {
           font-size: 32px;
+        }
+
+        .slider-wrapper {
+          #slider {
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 40%;
+              }
+            }
+          }
         }
       }
 
@@ -124,4 +265,5 @@
       }
     }
   }
+
 }
