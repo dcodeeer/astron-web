@@ -13,7 +13,7 @@
 
   <link href='/dist/css/styles.css' rel='stylesheet' />
 
-  <link href='/dist/css/pages/photo-gallery.css' rel='stylesheet' />
+  <link href='/dist/css/pages/photo-gallery-single.css' rel='stylesheet' />
 </head>
 <body>
   <header>
@@ -78,78 +78,47 @@
     <div class='container'>
       <content>
 
-        <div class='title H0'>Галерея</div>
-
-        <div class='tabs'>
-          <a href='/photo-gallery.html' class='tab active body-3-sarala'>Фотогалерея</a>
-          <a href='/photo-gallery.html' class='tab body-3-sarala'>Видеогалерея</a>
-          <a href='/photo-gallery.html' class='tab body-3-sarala'>Корпоративный журнал</a>
+        <div class='top'>
+          <a class='button-2' href='/photo-gallery.html'>
+            <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 9H2M2 9L9.5 1.5M2 9L9.5 16.5" stroke="#EA8C00" stroke-width="2"/></svg>
+            <span class='body-3-sarala'>Назад</span>
+          </a>
+          <div class='title H0'>Галерея</div>
         </div>
+
+        <div class='border-wrapper'>
+          <div class='border'></div>
+        </div>
+
+        <div class='project-name'>Название проекта</div>
         
-        <div class='list'>
+        <div class='list' id='gallery'>
           <div class='left'>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Азовсталь</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/1.png' />
-            </a>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Азовсталь</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/3.png' />
-            </a>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Азовсталь</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/5.png' />
-            </a>
+            <img class='item open-modal' data-id='1' src='/assets//images/photo-gallery/1.png' />
+            <img class='item open-modal' data-id='3' src='/assets//images/photo-gallery/3.png' />
+            <img class='item open-modal' data-id='5' src='/assets//images/photo-gallery/5.png' />
           </div>
           <div class='right'>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Еще какой-то проект</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/2.png' />
-            </a>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Ну и проект</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/4.png' />
-            </a>
-            <a class='item' href='/photo-gallery-single.html'>
-              <div class='box'>
-                <div class='block'>
-                  <div class='H0'>Азовсталь</div>
-                  <div class='arrow'></div>
-                </div>
-              </div>
-              <img src='/assets//images/photo-gallery/6.png' />
-            </a>
+            <img class='item open-modal' data-id='2' src='/assets//images/photo-gallery/2.png' />
+            <img class='item open-modal' data-id='4' src='/assets//images/photo-gallery/4.png' />
+            <img class='item open-modal' data-id='6' src='/assets//images/photo-gallery/6.png' />
+          </div>
+        </div>
+
+        <div class='modal'>
+          <div class='content'>
+            <div class='close-modal'><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.06066 0.43934C2.47487 -0.146447 1.52513 -0.146447 0.93934 0.43934C0.353553 1.02513 0.353553 1.97487 0.93934 2.56066L7.37868 9L0.93934 15.4393C0.353553 16.0251 0.353553 16.9749 0.93934 17.5607C1.52513 18.1464 2.47487 18.1464 3.06066 17.5607L9.5 11.1213L15.9393 17.5607C16.5251 18.1464 17.4749 18.1464 18.0607 17.5607C18.6464 16.9749 18.6464 16.0251 18.0607 15.4393L11.6213 9L18.0607 2.56066C18.6464 1.97487 18.6464 1.02513 18.0607 0.43934C17.4749 -0.146447 16.5251 -0.146447 15.9393 0.43934L9.5 6.87868L3.06066 0.43934Z" fill="white"/></svg></div>
+            <img src='' />
+            <div class='buttons'>
+              <div id='prev-btn' class='btn' onselectstart="return false"><svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.25 9H2.75M2.75 9L10.25 1.5M2.75 9L10.25 16.5" stroke="currentColor" stroke-width="3"/></svg></div>
+              <div id='next-btn' class='btn' onselectstart="return false"><svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 9H22.25M22.25 9L14.75 1.5M22.25 9L14.75 16.5" stroke="currentColor" stroke-width="3"/></svg></div>
+            </div>
           </div>
         </div>
 
       </content>
       <aside>
-        <div class='title H1'>Навигация по журналам</div>
+        <div class='title H1'>Навигация по фотогалерее</div>
         <div class='list'>
           <div class='row'>
             <div class='date body-3'>Сентябрь 21, 2023</div>
@@ -299,5 +268,74 @@
   </footer>
 
   <script type='text/javascript' src='./dist/js/main.js'></script>
+  <script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+
+      const images = [];
+
+      const gallery = Array.from(document.getElementById('gallery').querySelectorAll('img'));
+      gallery.forEach(function(element) {
+          images.push({ src: element.getAttribute('src'), dataId: parseInt(element.getAttribute('data-id')) });
+      });
+      images.sort(function(a, b) {
+        return a.dataId - b.dataId;
+      });
+
+      let currentIndex = 0;
+
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      let prevElem = null;
+      let nextElem = null;
+
+      const prevListener = (e) => {
+        if (currentIndex === 0) {
+          modal.querySelector('img').src = images[images.length - 1].src;
+          currentIndex = images.length - 1;
+        } else {
+          modal.querySelector('img').src = images[currentIndex - 1].src;
+          currentIndex = currentIndex - 1;
+        }
+      }
+
+      const nextListener = (e) => {
+        console.log(images.length);
+        console.log(currentIndex)
+        if (currentIndex === (images.length - 1)) {
+          console.log('here')
+          modal.querySelector('img').src = images[0].src;
+          currentIndex = 0;
+        } else {
+          modal.querySelector('img').src = images[currentIndex + 1].src;
+          currentIndex = currentIndex + 1;
+        }
+        console.log(currentIndex)
+      }
+
+      const closeModalListener = (e) => {
+        modal.classList.remove('show');
+        body.style.overflowY = 'visible';
+        modal.removeEventListener('click', closeModalListener);
+      };
+
+      const openModalListener = (e) => {
+        modal.classList.add('show');
+        
+        modal.querySelector('img').src = e.currentTarget.src;
+        body.style.overflowY = 'hidden';        
+
+        prevBtn.addEventListener('click', prevListener);
+        nextBtn.addEventListener('click', prevListener);
+
+        modal.querySelector('.close-modal').addEventListener('click', closeModalListener)
+      };
+
+      const blocks = document.querySelectorAll('.open-modal');
+      blocks.forEach((block) => block.addEventListener('click', openModalListener));
+    });
+  </script>
 </body>
 </html>

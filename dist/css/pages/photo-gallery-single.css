@@ -1,0 +1,137 @@
+.wrapper .container content {
+  padding-right: 0; }
+  .wrapper .container content .top {
+    display: flex;
+    align-items: center;
+    gap: 64px; }
+    .wrapper .container content .top .button-2 {
+      color: var(--color-orange);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 15px 32px; }
+      .wrapper .container content .top .button-2 span {
+        text-transform: uppercase;
+        font-weight: 700; }
+  .wrapper .container content .border-wrapper {
+    position: relative;
+    margin: 64px 0;
+    margin-left: calc(var(--margin-calc));
+    height: 2px; }
+    .wrapper .container content .border-wrapper .border {
+      width: 100%;
+      height: 2px;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1025" height="2" viewBox="0 0 1025 2" fill="none"><path d="M0 0.999996L1024.5 0.999953" stroke="%23EA8C00" stroke-opacity="0.4" stroke-dasharray="8 8"/></svg>');
+      margin-right: 0;
+      right: 0;
+      position: absolute; }
+  .wrapper .container content .project-name {
+    font-size: 140px;
+    font-family: 'Sarala', sans-serif;
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 100px; }
+  .wrapper .container content .list {
+    display: grid;
+    grid-template-columns: 57fr 43fr;
+    grid-template-rows: masonry;
+    gap: 4px;
+    margin-left: calc(var(--margin-calc) + 8%);
+    margin-right: 80px; }
+    .wrapper .container content .list .item {
+      display: block;
+      position: relative;
+      border-radius: 40px;
+      width: 100%; }
+  .wrapper .container content .modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    display: none; }
+    .wrapper .container content .modal .content {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 150px 1fr 300px;
+      gap: 50px;
+      padding: 0 4%;
+      align-items: center;
+      justify-content: space-around; }
+      .wrapper .container content .modal .content .close-modal {
+        border-radius: 60px;
+        background: var(--dark-text, #8C877B);
+        padding: 44px 62px;
+        top: 32px;
+        cursor: pointer; }
+      .wrapper .container content .modal .content img {
+        max-width: 100%;
+        max-height: 90vh;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 40px; }
+      .wrapper .container content .modal .content .buttons {
+        display: flex;
+        align-items: center;
+        gap: 4px; }
+        .wrapper .container content .modal .content .buttons .btn {
+          padding: 45px 60px;
+          border-radius: 60px;
+          border: 1px solid var(--active, #EA8C00);
+          background: var(--active, #EA8C00);
+          box-shadow: 0px 0px 84px 2px rgba(234, 140, 0, 0.7);
+          color: #fff;
+          cursor: pointer; }
+        .wrapper .container content .modal .content .buttons .btn.disabled {
+          background-color: #8C877B;
+          box-shadow: none;
+          border: 1px solid #8C877B; }
+  .wrapper .container content .modal.show {
+    display: flex; }
+
+.wrapper .container aside {
+  padding: 100px 0 0 150px;
+  padding-right: calc(var(--padding-calc)); }
+  .wrapper .container aside .title {
+    margin-bottom: 64px; }
+  .wrapper .container aside .list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px; }
+    .wrapper .container aside .list .row .body-3 {
+      color: #8C877B;
+      margin-bottom: 16px; }
+    .wrapper .container aside .list .row .body-1 {
+      text-decoration: underline; }
+
+@media screen and (max-width: 1536px) {
+  .wrapper .container aside {
+    padding: 80px 40px; } }
+
+@media screen and (max-width: 1120px) {
+  .wrapper .container {
+    width: 100%;
+    grid-template-columns: 1fr; }
+    .wrapper .container content {
+      margin-left: 0;
+      padding: 40px 20px; }
+      .wrapper .container content .list {
+        margin-left: 0; }
+    .wrapper .container aside {
+      padding: 40px 30px; } }
+
+@media screen and (max-width: 912px) {
+  .wrapper .container content .title {
+    font-size: 32px; }
+  .wrapper .container content .tabs {
+    grid-template-columns: 1fr;
+    border: none; }
+  .wrapper .container content .list {
+    grid-template-columns: 1fr; }
+    .wrapper .container content .list .item .box .block .H0 {
+      font-size: 32px; } }
