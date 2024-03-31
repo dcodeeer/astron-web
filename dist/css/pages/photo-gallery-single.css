@@ -45,7 +45,11 @@
       position: relative;
       border-radius: 40px;
       width: 100%;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      transition: 0.25s;
+      cursor: pointer; }
+      .wrapper .container content .list .item:hover {
+        filter: brightness(0.7); }
   .wrapper .container content .modal {
     background-color: rgba(13, 13, 13, 0.5);
     backdrop-filter: blur(40px);
@@ -122,8 +126,34 @@
     .wrapper .container content {
       margin-left: 0;
       padding: 40px 20px; }
+      .wrapper .container content .top {
+        gap: 20px; }
+        .wrapper .container content .top .button-2 {
+          padding: 15px 25px; }
+      .wrapper .container content .project-name {
+        font-size: 48px;
+        margin-bottom: 32px; }
+      .wrapper .container content .border-wrapper {
+        margin: 32px -20px; }
       .wrapper .container content .list {
-        margin-left: 0; }
+        margin-left: 0;
+        margin-right: 0; }
+      .wrapper .container content .modal .content {
+        display: flex;
+        align-items: center; }
+        .wrapper .container content .modal .content img {
+          width: 100%;
+          object-fit: cover; }
+        .wrapper .container content .modal .content .close-modal {
+          padding: 18px;
+          position: absolute;
+          right: 15px; }
+          .wrapper .container content .modal .content .close-modal svg {
+            display: block; }
+        .wrapper .container content .modal .content .buttons {
+          position: absolute;
+          margin: 0 auto;
+          bottom: 15px; }
     .wrapper .container aside {
       padding: 40px 30px; } }
 

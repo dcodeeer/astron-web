@@ -68,6 +68,12 @@ body {
   margin: 0 auto;
 }
 
+header {
+  .container {
+    width: calc(100% - 30px);
+  }
+}
+
 @media screen and (max-width: 1536px) {
   :root {
     --container-width: 1250px;
