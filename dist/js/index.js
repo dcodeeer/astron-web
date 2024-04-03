@@ -122,6 +122,12 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 document.addEventListener('DOMContentLoaded', function () {
   var modal = document.querySelector('.pdf-modal');
   var closeModal = function closeModal(e) {
@@ -188,6 +194,44 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  var data = JSON.parse('{"exac":[{"title":"the title","count":"2","left_title":"Техническое Описание","left_list":[{"key":"value"}],"left_images":["asda","asdsad"],"right_title":"Техническое Описание","right_list":[{"key":"value"}],"right_images":["asda","asdsad"]}],"exac_2":[{"title":"the title 2","count":"2","left_title":"Техническое Описание","left_list":[{"key":"value"}],"left_images":["asda","asdsad"],"right_title":"Техническое Описание","right_list":[{"key":"value"}],"right_images":["asda","asdsad"]}]}');
+  document.querySelectorAll('.tab').forEach(function (elem, index) {
+    elem.addEventListener('click', function (e) {
+      swiper2.slideTo(index);
+      var category = e.currentTarget.getAttribute('data-category-slag');
+      var list = data[category];
+      if (list) {
+        var html = '';
+        list.forEach(function (item, index) {
+          item.category = category;
+          item.index = index;
+          html += createSlideFromList(item);
+        });
+        var swiperWrapper = document.querySelector('.third .slider-container .swiper-wrapper');
+        swiperWrapper.innerHTML = html;
+        swiper.update();
+        swiper.updateSize();
+        var _blocks = document.querySelectorAll('.slide-open-modal');
+        _blocks.forEach(function (block) {
+          return block.addEventListener('click', modalOpenListener);
+        });
+      }
+    });
+  });
+  var createSlideFromList = function createSlideFromList(_ref) {
+    var index = _ref.index,
+      title = _ref.title,
+      preview = _ref.preview,
+      isNew = _ref.isNew,
+      count = _ref.count,
+      category = _ref.category;
+    var output = "\n      <div class='swiper-slide slide-open-modal' data-id='".concat(index, "' data-category-slag='").concat(category, "'>\n            <div class='image'>");
+    if (isNew) {
+      output += "<div class='new body-1'>NEW ARRIVING</div>";
+    }
+    output += "<img src='".concat(preview, "' />\n            </div>\n            <div class='info'>\n              <div class='left'>\n                <div class='H1'>").concat(title, "</div>\n                <div class='body-3-sarala'></div>\n              </div>\n              <div class='right'>\n                <div class='count'>\n                  <div class='number'>").concat(count, "</div>\n                  <div class='text body-4'>\u043E\u0434\u0438\u043D\u0438\u0446\u0456</div>\n                </div>\n                <div class='icon'>\n                  <svg width=\"24\" height=\"19\" viewBox=\"0 0 24 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M0.25 9.5H21.75M21.75 9.5L14.25 2M21.75 9.5L14.25 17\" stroke=\"currentColor\" stroke-width=\"3\"/>\n                    </svg>\n                    \n                </div>\n              </div>\n            </div>\n          </div>");
+    return output;
+  };
   var modalSlider = new Swiper('#modal-slider', {
     init: false,
     effect: 'fade',
@@ -242,11 +286,79 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // modal
 
-  var modalOpenListener = function modalOpenListener() {
+  var modalOpenListener = function modalOpenListener(e) {
     var body = document.querySelector('body');
     var modal = document.querySelector('.modal');
     modal.classList.add('opened');
     body.style.overflowY = 'hidden';
+    var category = e.currentTarget.getAttribute('data-category-slag');
+    var id = e.currentTarget.getAttribute('data-id');
+    var item = data[category][id];
+    modal.querySelector('[data-name="preview_mini"]').innerHTML = item.preview_mini;
+    modal.querySelector('[data-name="title"]').innerHTML = item.title;
+    modal.querySelector('[data-name="left_title"]').innerHTML = item.left_title;
+    modal.querySelector('[data-name="right_title"]').innerHTML = item.right_title;
+    modal.querySelector('[data-name="count"]').innerHTML = item.count;
+    var left_slider = modal.querySelector('[data-name="left_slider"]');
+    item['left_images'].forEach(function (image) {
+      var slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      var img = document.createElement('img');
+      img.src = image;
+      slide.append(img);
+      left_slider.innerHTML = '';
+      left_slider.append(slide);
+    });
+    var right_slider = modal.querySelector('[data-name="right_slider"]');
+    item['right_images'].forEach(function (image) {
+      var slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      var img = document.createElement('img');
+      img.src = image;
+      slide.append(img);
+      right_slider.innerHTML = '';
+      right_slider.append(slide);
+    });
+    var left_list = modal.querySelector('[data-name="left_list"]');
+    var right_list = modal.querySelector('[data-name="right_list"]');
+    item['left_list'].forEach(function (value) {
+      Object.entries(value).forEach(function (_ref2) {
+        var _ref3 = _slicedToArray(_ref2, 2),
+          key = _ref3[0],
+          value = _ref3[1];
+        var div = document.createElement('div');
+        div.classList.add('row', 'body-3-sarala');
+        var keyElem = document.createElement('div');
+        keyElem.classList.add('key');
+        keyElem.innerHTML = key;
+        div.append(keyElem);
+        var valueElem = document.createElement('div');
+        valueElem.classList.add('value');
+        valueElem.innerHTML = value;
+        div.append(valueElem);
+        left_list.innerHTML = '';
+        left_list.append(div);
+      });
+    });
+    item['right_list'].forEach(function (value) {
+      Object.entries(value).forEach(function (_ref4) {
+        var _ref5 = _slicedToArray(_ref4, 2),
+          key = _ref5[0],
+          value = _ref5[1];
+        var div = document.createElement('div');
+        div.classList.add('row', 'body-3-sarala');
+        var keyElem = document.createElement('div');
+        keyElem.classList.add('key');
+        keyElem.innerHTML = key;
+        div.append(keyElem);
+        var valueElem = document.createElement('div');
+        valueElem.classList.add('value');
+        valueElem.innerHTML = value;
+        div.append(valueElem);
+        right_list.innerHTML = '';
+        right_list.append(div);
+      });
+    });
     document.getElementById('close-modal').addEventListener('click', function () {
       modal.classList.remove('opened');
       body.style.overflowY = 'visible';
@@ -631,7 +743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42201" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37737" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -269,7 +269,7 @@ header {
         .index-page .third .container .tabs .tab:hover {
           background: rgba(234, 140, 0, 0.1);
           color: var(--color-orange); }
-      .index-page .third .container .tabs .tab-active {
+      .index-page .third .container .tabs .swiper-slide-active {
         background: rgba(234, 140, 0, 0.1);
         font-weight: 700;
         color: var(--color-orange); }
@@ -363,6 +363,7 @@ header {
           object-fit: cover; }
       .index-page .third .slider-container .swiper-slide .info {
         display: flex;
+        justify-content: space-between;
         border: 1px solid #000;
         background: rgba(234, 140, 0, 0.1);
         padding: 30px 60px; }

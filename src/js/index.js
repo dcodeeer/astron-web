@@ -68,6 +68,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const data = JSON.parse('{"exac":[{"title":"the title","count":"2","left_title":"Техническое Описание","left_list":[{"key":"value"}],"left_images":["asda","asdsad"],"right_title":"Техническое Описание","right_list":[{"key":"value"}],"right_images":["asda","asdsad"]}],"exac_2":[{"title":"the title 2","count":"2","left_title":"Техническое Описание","left_list":[{"key":"value"}],"left_images":["asda","asdsad"],"right_title":"Техническое Описание","right_list":[{"key":"value"}],"right_images":["asda","asdsad"]}]}');
+
+  document.querySelectorAll('.tab').forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+      swiper2.slideTo(index);
+      const category = e.currentTarget.getAttribute('data-category-slag');
+      const list = data[category];
+
+      if (list) {
+        let html = '';
+        list.forEach((item, index) => {
+          item.category = category;
+          item.index = index;
+          html += createSlideFromList(item);
+        });
+        const swiperWrapper = document.querySelector('.third .slider-container .swiper-wrapper');
+        swiperWrapper.innerHTML = html;
+        swiper.update();
+        swiper.updateSize();
+        const blocks = document.querySelectorAll('.slide-open-modal');
+        blocks.forEach(block => block.addEventListener('click', modalOpenListener));
+      }
+    })
+  });
+
+  const createSlideFromList = ({ index, title, preview, isNew, count, category }) => {
+    let output =  `
+      <div class='swiper-slide slide-open-modal' data-id='${index}' data-category-slag='${category}'>
+            <div class='image'>`;
+
+            if (isNew) {
+              output += `<div class='new body-1'>NEW ARRIVING</div>`;
+            }
+
+    output +=`<img src='${preview}' />
+            </div>
+            <div class='info'>
+              <div class='left'>
+                <div class='H1'>${title}</div>
+                <div class='body-3-sarala'></div>
+              </div>
+              <div class='right'>
+                <div class='count'>
+                  <div class='number'>${count}</div>
+                  <div class='text body-4'>одиниці</div>
+                </div>
+                <div class='icon'>
+                  <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.25 9.5H21.75M21.75 9.5L14.25 2M21.75 9.5L14.25 17" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                    
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+    return output;
+  };
+
   const modalSlider = new Swiper('#modal-slider', {
     init: false,
     effect: 'fade',
@@ -131,12 +190,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // modal
 
-  const modalOpenListener = () => {
+  const modalOpenListener = (e) => {
     const body = document.querySelector('body');
 
     const modal = document.querySelector('.modal');
     modal.classList.add('opened');
     body.style.overflowY = 'hidden';
+
+    const category = e.currentTarget.getAttribute('data-category-slag');
+    const id = e.currentTarget.getAttribute('data-id');
+    const item = data[category][id];
+
+
+    modal.querySelector('[data-name="preview_mini"]').innerHTML = item.preview_mini;
+    modal.querySelector('[data-name="title"]').innerHTML = item.title;
+    modal.querySelector('[data-name="left_title"]').innerHTML = item.left_title;
+    modal.querySelector('[data-name="right_title"]').innerHTML = item.right_title;
+    modal.querySelector('[data-name="count"]').innerHTML = item.count;
+
+    const left_slider = modal.querySelector('[data-name="left_slider"]');
+    item['left_images'].forEach((image) => {
+      const slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      const img = document.createElement('img');
+      img.src = image;
+      slide.append(img);
+      left_slider.innerHTML = '';
+      left_slider.append(slide);
+    });
+
+    const right_slider = modal.querySelector('[data-name="right_slider"]');
+    item['right_images'].forEach((image) => {
+      const slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      const img = document.createElement('img');
+      img.src = image;
+      slide.append(img);
+      right_slider.innerHTML = '';
+      right_slider.append(slide);
+    });
+
+    const left_list = modal.querySelector('[data-name="left_list"]');
+    const right_list = modal.querySelector('[data-name="right_list"]');
+    
+    item['left_list'].forEach((value) => {
+      Object.entries(value).forEach(([key, value]) => {
+        const div = document.createElement('div');
+        div.classList.add('row', 'body-3-sarala');
+  
+        const keyElem = document.createElement('div');
+        keyElem.classList.add('key');
+        keyElem.innerHTML = key;
+        div.append(keyElem);
+  
+        const valueElem = document.createElement('div');
+        valueElem.classList.add('value');
+        valueElem.innerHTML = value;
+        div.append(valueElem);
+  
+        left_list.innerHTML = '';
+        left_list.append(div);
+      });
+    });
+
+    item['right_list'].forEach((value) => {
+      Object.entries(value).forEach(([key, value]) => {
+        const div = document.createElement('div');
+        div.classList.add('row', 'body-3-sarala');
+  
+        const keyElem = document.createElement('div');
+        keyElem.classList.add('key');
+        keyElem.innerHTML = key;
+        div.append(keyElem);
+  
+        const valueElem = document.createElement('div');
+        valueElem.classList.add('value');
+        valueElem.innerHTML = value;
+        div.append(valueElem);
+  
+        right_list.innerHTML = '';
+        right_list.append(div);
+      });
+    });
 
     document.getElementById('close-modal').addEventListener('click', () => {
       modal.classList.remove('opened')
