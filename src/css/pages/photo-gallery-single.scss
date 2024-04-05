@@ -13,6 +13,11 @@
           align-items: center;
           gap: 24px;
           padding: 15px 32px;
+          transition: 0.25s;
+
+          &:hover {
+            background: rgba(234, 140, 0, 0.1);
+          }
 
           span {
             text-transform: uppercase;
@@ -49,12 +54,20 @@
       }
 
       .list {
-        display: grid;
-        grid-template-columns: 57fr 43fr;
-        grid-template-rows: masonry;
-        gap: 4px;
         margin-left: calc(var(--margin-calc) + 8%);
         margin-right: 80px;
+
+        .title {
+          margin-bottom: 35px;
+        }
+
+        .box {
+          display: grid;
+          grid-template-columns: 57fr 43fr;
+          grid-template-rows: masonry;
+          gap: 4px;
+          margin-bottom: 70px;
+        }
 
         .item {
           display: block;

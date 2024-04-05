@@ -93,15 +93,31 @@
         <div class='project-name'>Название проекта</div>
         
         <div class='list' id='gallery'>
-          <div class='left'>
-            <img class='item open-modal' data-id='1' src='/assets//images/photo-gallery/1.png' />
-            <img class='item open-modal' data-id='3' src='/assets//images/photo-gallery/3.png' />
-            <img class='item open-modal' data-id='5' src='/assets//images/photo-gallery/5.png' />
+          <div class='title H1'>Азовсталь. лето 2023</div>
+          <div class='box' id='box1'>
+            <div class='left'>
+              <img class='item open-modal' data-id='1' data-box-id='1' src='/assets//images/photo-gallery/1.png' />
+              <img class='item open-modal' data-id='3' data-box-id='1' src='/assets//images/photo-gallery/3.png' />
+              <img class='item open-modal' data-id='5' data-box-id='1' src='/assets//images/photo-gallery/5.png' />
+            </div>
+            <div class='right'>
+              <img class='item open-modal' data-id='2' data-box-id='1' src='/assets//images/photo-gallery/2.png' />
+              <img class='item open-modal' data-id='4' data-box-id='1' src='/assets//images/photo-gallery/4.png' />
+              <img class='item open-modal' data-id='6' data-box-id='1' src='/assets//images/photo-gallery/6.png' />
+            </div>
           </div>
-          <div class='right'>
-            <img class='item open-modal' data-id='2' src='/assets//images/photo-gallery/2.png' />
-            <img class='item open-modal' data-id='4' src='/assets//images/photo-gallery/4.png' />
-            <img class='item open-modal' data-id='6' src='/assets//images/photo-gallery/6.png' />
+          <div class='title H1'>Азовсталь. лето 2023</div>
+          <div class='box' id='box2'>
+            <div class='left'>
+              <img class='item open-modal' data-id='1' data-box-id='2' src='/assets//images/photo-gallery/1.png' />
+              <img class='item open-modal' data-id='3' data-box-id='2' src='/assets//images/photo-gallery/3.png' />
+              <img class='item open-modal' data-id='5' data-box-id='2' src='/assets//images/photo-gallery/5.png' />
+            </div>
+            <div class='right'>
+              <img class='item open-modal' data-id='2' data-box-id='2' src='/assets//images/photo-gallery/2.png' />
+              <img class='item open-modal' data-id='4' data-box-id='2' src='/assets//images/photo-gallery/4.png' />
+              <img class='item open-modal' data-id='6' data-box-id='2' src='/assets//images/photo-gallery/6.png' />
+            </div>
           </div>
         </div>
 
@@ -275,14 +291,6 @@
 
       const images = [];
 
-      const gallery = Array.from(document.getElementById('gallery').querySelectorAll('img'));
-      gallery.forEach(function(element) {
-          images.push({ src: element.getAttribute('src'), dataId: parseInt(element.getAttribute('data-id')) });
-      });
-      images.sort(function(a, b) {
-        return a.dataId - b.dataId;
-      });
-
       let currentIndex = 0;
 
       const prevBtn = document.getElementById('prev-btn');
@@ -329,6 +337,17 @@
 
         prevBtn.addEventListener('click', prevListener);
         nextBtn.addEventListener('click', prevListener);
+
+        images.splice(0, images.length)
+        const gallery = Array.from(document.getElementById('box'+e.currentTarget.getAttribute('data-box-id')).querySelectorAll('img'));
+        gallery.forEach(function(element) {
+            images.push({ src: element.getAttribute('src'), dataId: parseInt(element.getAttribute('data-id')) });
+        });
+        images.sort(function(a, b) {
+          return a.dataId - b.dataId;
+        });
+
+        console.log(images)
 
         modal.querySelector('.close-modal').addEventListener('click', closeModalListener)
       };
